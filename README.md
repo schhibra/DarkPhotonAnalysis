@@ -1,1 +1,1 @@
-this repository contains analysis code and results
+This repository contains analysis code and results
