@@ -1,9 +1,0 @@
-executable              = run_20190513_192407_scout_6.sh
-arguments               = $(ClusterId)$(ProcId)
-output                  = out/out.$(ClusterId).$(ProcId).out
-error                   = err/err.$(ClusterId).$(ProcId).err
-log                     = log/log.$(ClusterId).log
-+JobFlavour             = "tomorrow"
-should_transfer_files   = YES
-when_to_transfer_output = ON_EXIT
-queue

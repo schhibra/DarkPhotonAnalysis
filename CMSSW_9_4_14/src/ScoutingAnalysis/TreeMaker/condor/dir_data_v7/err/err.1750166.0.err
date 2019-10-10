@@ -1,3 +1,0 @@
-Error in <TSystem::ExpandFileName>: input: $HOME/.root/rootlogon.C, output: $HOME/.root/rootlogon.C
-Error in <TSystem::ExpandFileName>: input: /eos/cms/store/group/phys_exotica/darkPhoton/schhibra/ScoutingNTuples2017/jobs_data_v7/./$HOME/.root/rootlogon.C, output: /eos/cms/store/group/phys_exotica/darkPhoton/schhibra/ScoutingNTuples2017/jobs_data_v7/./$HOME/.root/rootlogon.C
-Error in <TSystem::ExpandFileName>: input: /cvmfs/cms.cern.ch/slc6_amd64_gcc630/lcg/root/6.10.08-elfike2/macros/$HOME/.root/rootlogon.C, output: /cvmfs/cms.cern.ch/slc6_amd64_gcc630/lcg/root/6.10.08-elfike2/macros/$HOME/.root/rootlogon.C
