@@ -1,0 +1,4 @@
+pluginScoutingAnalysisTreeMakerAuto.so LHEWeightsTreeMakerForScout CMS%EDM%Framework%Module
+pluginScoutingAnalysisTreeMakerAuto.so LHEWeightsTreeMakerForScout CMS%EDM%Framework%ParameterSet%Description
+pluginScoutingAnalysisTreeMakerAuto.so TreeMaker CMS%EDM%Framework%Module
+pluginScoutingAnalysisTreeMakerAuto.so TreeMaker CMS%EDM%Framework%ParameterSet%Description

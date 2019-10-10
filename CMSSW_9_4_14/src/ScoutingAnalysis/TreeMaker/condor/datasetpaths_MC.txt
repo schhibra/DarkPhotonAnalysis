@@ -1,0 +1,1 @@
+/eos/cms/store/group/phys_exotica/darkPhoton/schhibra/ScoutingNTuples2017/tree_DarkPhotonToMuMu_M70.root

@@ -1,0 +1,26 @@
+imax *                                                                                                                        
+jmax *                                                                                                                        
+kmax *                                                                                                                        
+------------                                                                                                                  
+shapes dp17     catB     card_m21.0731_catB_workspace.root     w:sig_mass_dp17_catB_pdf     
+shapes dp18     catB     card_m21.0731_catB_workspace.root     w:sig_mass_dp18_catB_pdf     
+shapes bkg      catB     card_m21.0731_catB_workspace.root     w:bkg_mass_catB_pdf     
+shapes data_obs catB     card_m21.0731_catB_workspace.root     w:data_obs                
+------------                                                                                                                  
+bin             catB
+observation        -1                                                                                                         
+------------                                                                                                                  
+bin                                    catB    catB    catB
+process                                dp17       dp18       bkg         
+process                                -1         0          1           
+rate                                    1         1          1           
+------------
+## Dark photon mass : 21.0731
+lumi_13TeV                lnN        1.026          1.026          -           
+QCDscale                  lnN        1.10           1.10           -           
+pdf_gg                    lnN        1.10           1.10           -           
+CMS_eff_mm_sel            lnN        1.03           1.03           -           
+CMS_eff_mm_trig           lnN        1.2            1.2            -           
+CMS_dp_scale17B           param      0              0.000723622
+CMS_dp_scale18B           param      0              0.000671047
+CMS_dp_res                  param      0              0.1           

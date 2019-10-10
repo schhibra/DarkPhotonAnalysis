@@ -1,0 +1,4 @@
+tmp/slc6_amd64_gcc630/src/ScoutingAnalysis/TreeMaker/src/ScoutingAnalysisTreeMaker/RoccoR.o: \
+ src/ScoutingAnalysis/TreeMaker/src/RoccoR.cc \
+ src/ScoutingAnalysis/TreeMaker/src/../interface/RoccoR.h
+

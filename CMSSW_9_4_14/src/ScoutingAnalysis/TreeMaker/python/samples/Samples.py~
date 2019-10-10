@@ -1,0 +1,13 @@
+samples = {}
+
+#from AVAnalysis_scouting2017.TreeMaker.samples.SC import AddSCSamples
+#from AVAnalysis_scouting2017.TreeMaker.samples.DP import AddDPSamples
+from AVAnalysis_scouting2017.TreeMaker.samples.DP_Official import AddDP_OfficialSamples
+from AVAnalysis_scouting2017.TreeMaker.samples.Zll import AddZllSamples
+from AVAnalysis_scouting2017.TreeMaker.samples.Upsilon import AddUpsilonSamples
+
+#AddSCSamples(samples)
+#AddDPSamples(samples)
+AddDP_OfficialSamples(samples)
+AddZllSamples(samples)
+AddUpsilonSamples(samples)

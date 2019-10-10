@@ -1,0 +1,238 @@
+DEBUG 2019-05-13 19:26:39,966: 	 Executing command: 'submit'
+DEBUG 2019-05-13 19:26:39,967: 	 Found CRAB cache file /afs/cern.ch/user/s/schhibra/.crab3
+DEBUG 2019-05-13 19:26:39,975: 	 Checking credentials
+DEBUG 2019-05-13 19:26:39,976: 	 Found proxy file /tmp/x509up_u59012
+DEBUG 2019-05-13 19:26:39,976: 	 Getting proxy life time left
+DEBUG 2019-05-13 19:26:40,688: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u59012 -timeleft
+ output : 603345
+
+ error: 
+ retcode : 0
+DEBUG 2019-05-13 19:26:41,395: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u59012 -actimeleft
+ output : 603344
+
+ error: 
+ retcode : 0
+DEBUG 2019-05-13 19:26:41,396: 	 Proxy lifetime 603345 secs is different from voms extension lifetime 603344 secs for proxy: /tmp/x509up_u59012
+DEBUG 2019-05-13 19:26:41,396: 	 Proxy valid for 167:35:44 hours
+INFO 2019-05-13 19:26:41,396: 	 Will use CRAB configuration file crabConfig.py
+DEBUG 2019-05-13 19:26:41,396: 	 Loading CRAB configuration file.
+DEBUG 2019-05-13 19:26:41,413: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2019-05-13 19:26:41,532: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=schhibra/CN=715612/CN=Simranjit Singh Chhibra
+
+ error: 
+ retcode : 0
+DEBUG 2019-05-13 19:26:41,532: 	 Checking credentials
+DEBUG 2019-05-13 19:26:41,533: 	 Found proxy file /tmp/x509up_u59012
+DEBUG 2019-05-13 19:26:41,533: 	 Getting proxy life time left
+DEBUG 2019-05-13 19:26:42,338: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u59012 -timeleft
+ output : 603343
+
+ error: 
+ retcode : 0
+DEBUG 2019-05-13 19:26:43,146: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u59012 -actimeleft
+ output : 603342
+
+ error: 
+ retcode : 0
+DEBUG 2019-05-13 19:26:43,146: 	 Proxy lifetime 603343 secs is different from voms extension lifetime 603342 secs for proxy: /tmp/x509up_u59012
+DEBUG 2019-05-13 19:26:43,146: 	 Proxy valid for 167:35:42 hours
+DEBUG 2019-05-13 19:26:43,858: 	 Executing : 
+ command : env X509_USER_PROXY=/tmp/x509up_u59012 voms-proxy-info -fqan
+ output : /cms/Role=NULL/Capability=NULL
+
+ error: 
+ retcode : 0
+DEBUG 2019-05-13 19:26:44,027: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+DEBUG 2019-05-13 19:26:44,141: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=schhibra/CN=715612/CN=Simranjit Singh Chhibra
+
+ error: 
+ retcode : 0
+DEBUG 2019-05-13 19:26:44,141: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2019-05-13 19:26:44,141: 	 Calculating hash of /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=schhibra/CN=715612/CN=Simranjit Singh Chhibra_cmsweb.cern.ch for credential name
+DEBUG 2019-05-13 19:26:44,648: 	 Executing : 
+ command : myproxy-info -l 3841cd59f3d3480019d577f9a3ad69704f35aad0 -s myproxy.cern.ch
+ output : username: 3841cd59f3d3480019d577f9a3ad69704f35aad0
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=schhibra/CN=715612/CN=Simranjit Singh Chhibra
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+  timeleft: 430:57:39  (18.0 days)
+
+ error: 
+ retcode : 0
+DEBUG 2019-05-13 19:26:44,650: 	 Myproxy is valid: 1551459
+DEBUG 2019-05-13 19:26:44,650: 	 Command use: submit
+DEBUG 2019-05-13 19:26:44,650: 	 Options use: []
+DEBUG 2019-05-13 19:26:44,815: 	 CRABClient version: 3.3.1904
+DEBUG 2019-05-13 19:26:44,815: 	 Instance is prod
+DEBUG 2019-05-13 19:26:44,815: 	 Server base url is cmsweb.cern.ch
+DEBUG 2019-05-13 19:26:44,815: 	 Command url /crabserver/prod/workflow
+DEBUG 2019-05-13 19:26:44,815: 	 Started submission
+DEBUG 2019-05-13 19:26:44,815: 	 Working on /afs/cern.ch/work/s/schhibra/DarkPhotonSearch_v2/CMSSW_9_4_14/src/ScoutingAnalysis/TreeMaker/crab/ZdScoutingM30_L1_12_5_L1_15_7_Official_AccXEff/crab_20190513_192641
+DEBUG 2019-05-13 19:26:44,976: 	 Loading required information from the environment
+DEBUG 2019-05-13 19:26:44,976: 	 Found CMSSW_9_4_14 for slc6_amd64_gcc630 with base /afs/cern.ch/work/s/schhibra/DarkPhotonSearch_v2/CMSSW_9_4_14
+DEBUG 2019-05-13 19:26:44,976: 	 Loading required information from the environment
+DEBUG 2019-05-13 19:26:44,976: 	 Found CMSSW_9_4_14 for slc6_amd64_gcc630 with base /afs/cern.ch/work/s/schhibra/DarkPhotonSearch_v2/CMSSW_9_4_14
+DEBUG 2019-05-13 19:26:44,992: 	 UNIQUE NAME: tarUUID b2e85c61-3565-4c8a-a7f5-5a54ff4816e1 
+DEBUG 2019-05-13 19:26:44,992: 	 self.config: from WMCore.Configuration import Configuration
+config = Configuration()
+config.section_('General')
+config.section_('JobType')
+config.JobType.psetName = '../../test/tree_scout_cfg.py'
+config.JobType.pluginName = 'Analysis'
+config.JobType.inputFiles = ['../Rochester.tar.gz']
+config.JobType.pyCfgParams = ['isMC=True', 'useLHEWeights=True', 'GlobalTag=94X_mc2017_realistic_v11', 'roccorData=Rochester/RoccoR2017.txt']
+config.JobType.scriptExe = '../exec.sh'
+config.section_('Data')
+config.Data.inputDataset = '/DarkPhotonToMuMu_M30_madgraph_pythia8_TuneCP5/RunIIFall17DRPremix-PU2017_94X_mc2017_realistic_v11-v1/AODSIM'
+config.Data.unitsPerJob = 10000
+config.Data.publication = False
+config.Data.splitting = 'EventAwareLumiBased'
+config.Data.outLFNDirBase = '/store/group/phys_exotica/darkPhoton/schhibra/ScoutingNTuples2017'
+config.section_('Site')
+config.Site.storageSite = 'T2_CH_CERN'
+config.section_('User')
+config.section_('Debug')
+
+DEBUG 2019-05-13 19:26:44,993: 	 self.config.JobType.psetName: ../../test/tree_scout_cfg.py
+INFO 2019-05-13 19:26:44,993: 	 Importing CMSSW configuration ../../test/tree_scout_cfg.py
+DEBUG 2019-05-13 19:26:44,993: 	 Additional parameters for the CMSSW configuration are: ['isMC=True', 'useLHEWeights=True', 'GlobalTag=94X_mc2017_realistic_v11', 'roccorData=Rochester/RoccoR2017.txt']
+INFO 2019-05-13 19:26:46,552: 	 Finished importing CMSSW configuration ../../test/tree_scout_cfg.py
+DEBUG 2019-05-13 19:26:46,552: 	 Writing CMSSW configuration to /afs/cern.ch/work/s/schhibra/DarkPhotonSearch_v2/CMSSW_9_4_14/src/ScoutingAnalysis/TreeMaker/crab/ZdScoutingM30_L1_12_5_L1_15_7_Official_AccXEff/crab_20190513_192641/inputs/PSet.py
+DEBUG 2019-05-13 19:26:46,954: 	 The following EDM output files will be collected: []
+DEBUG 2019-05-13 19:26:46,954: 	 The following TFile output files will be collected: ['tree_scout.root']
+DEBUG 2019-05-13 19:26:46,954: 	 The following user output files will be collected: []
+DEBUG 2019-05-13 19:26:46,954: 	 Loading required information from the environment
+DEBUG 2019-05-13 19:26:46,954: 	 Found CMSSW_9_4_14 for slc6_amd64_gcc630 with base /afs/cern.ch/work/s/schhibra/DarkPhotonSearch_v2/CMSSW_9_4_14
+DEBUG 2019-05-13 19:26:46,955: 	 Making tarball in /afs/cern.ch/work/s/schhibra/DarkPhotonSearch_v2/CMSSW_9_4_14/src/ScoutingAnalysis/TreeMaker/crab/ZdScoutingM30_L1_12_5_L1_15_7_Official_AccXEff/crab_20190513_192641/inputs/b2e85c61-3565-4c8a-a7f5-5a54ff4816e1default.tgz
+DEBUG 2019-05-13 19:26:46,958: 	 Checking directory /afs/cern.ch/work/s/schhibra/DarkPhotonSearch_v2/CMSSW_9_4_14/lib
+DEBUG 2019-05-13 19:26:46,958: 	 Adding directory /afs/cern.ch/work/s/schhibra/DarkPhotonSearch_v2/CMSSW_9_4_14/lib to tarball
+DEBUG 2019-05-13 19:26:46,966: 	 Checking directory /afs/cern.ch/work/s/schhibra/DarkPhotonSearch_v2/CMSSW_9_4_14/biglib
+DEBUG 2019-05-13 19:26:46,966: 	 Adding directory /afs/cern.ch/work/s/schhibra/DarkPhotonSearch_v2/CMSSW_9_4_14/biglib to tarball
+DEBUG 2019-05-13 19:26:46,966: 	 Checking directory /afs/cern.ch/work/s/schhibra/DarkPhotonSearch_v2/CMSSW_9_4_14/module
+DEBUG 2019-05-13 19:26:46,967: 	 Adding data directory /afs/cern.ch/work/s/schhibra/DarkPhotonSearch_v2/CMSSW_9_4_14/src/ScoutingAnalysis/TreeMaker/data to tarball
+DEBUG 2019-05-13 19:26:47,162: 	 Adding data directory /afs/cern.ch/work/s/schhibra/DarkPhotonSearch_v2/CMSSW_9_4_14/src/ScoutingAnalysis/TreeMaker/interface to tarball
+DEBUG 2019-05-13 19:26:47,180: 	 Adding file ../Rochester.tar.gz to tarball
+DEBUG 2019-05-13 19:26:47,517: 	 Uploading archive /afs/cern.ch/work/s/schhibra/DarkPhotonSearch_v2/CMSSW_9_4_14/src/ScoutingAnalysis/TreeMaker/crab/ZdScoutingM30_L1_12_5_L1_15_7_Official_AccXEff/crab_20190513_192641/inputs/b2e85c61-3565-4c8a-a7f5-5a54ff4816e1default.tgz (1.383789.1 MB) to the CRAB cache. Using URI https://cmsweb.cern.ch/crabcache
+DEBUG 2019-05-13 19:26:48,606: 	 Loading required information from the environment
+DEBUG 2019-05-13 19:26:48,607: 	 Found CMSSW_9_4_14 for slc6_amd64_gcc630 with base /afs/cern.ch/work/s/schhibra/DarkPhotonSearch_v2/CMSSW_9_4_14
+DEBUG 2019-05-13 19:26:48,607: 	 Making tarball in /afs/cern.ch/work/s/schhibra/DarkPhotonSearch_v2/CMSSW_9_4_14/src/ScoutingAnalysis/TreeMaker/crab/ZdScoutingM30_L1_12_5_L1_15_7_Official_AccXEff/crab_20190513_192641/inputs/debugFiles.tgz
+DEBUG 2019-05-13 19:26:48,612: 	 Uploading archive /afs/cern.ch/work/s/schhibra/DarkPhotonSearch_v2/CMSSW_9_4_14/src/ScoutingAnalysis/TreeMaker/crab/ZdScoutingM30_L1_12_5_L1_15_7_Official_AccXEff/crab_20190513_192641/inputs/debugFiles.tgz (2 KB) to the CRAB cache. Using URI https://cmsweb.cern.ch/crabcache
+DEBUG 2019-05-13 19:26:48,710: 	 Result uploading input files: a91432ba4693afbbde9dbfbf3a45ce6415c548894da6deac0dabcf6ac4d297eb.tar.gz 
+INFO 2019-05-13 19:26:48,710: 	 Sending the request to the server
+DEBUG 2019-05-13 19:26:48,711: 	 Submitting {'maxjobruntime': 1250, 'extrajdl': [], 'lfn': '/store/group/phys_exotica/darkPhoton/schhibra/ScoutingNTuples2017', 'savelogsflag': 0, 'useparent': 0, 'scriptexe': 'exec.sh', 'asyncdest': 'T2_CH_CERN', 'algoargs': 10000, 'cachefilename': 'a91432ba4693afbbde9dbfbf3a45ce6415c548894da6deac0dabcf6ac4d297eb.tar.gz', 'numcores': 1, 'addoutputfiles': [], 'generator': 'pythia', 'maxmemory': 2000, 'publishdbsurl': 'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter', 'priority': 10, 'jobsw': 'CMSSW_9_4_14', 'edmoutfiles': [], 'userfiles': [], 'primarydataset': '', 'inputdata': '/DarkPhotonToMuMu_M30_madgraph_pythia8_TuneCP5/RunIIFall17DRPremix-PU2017_94X_mc2017_realistic_v11-v1/AODSIM', 'ignorelocality': 0, 'dryrun': 0, 'workflow': 'crab_20190513_192641', 'cacheurl': u'https://cmsweb.cern.ch/crabcache', 'nonprodsw': 0, 'tfileoutfiles': ['tree_scout.root'], 'oneEventMode': 0, 'debugfilename': '5fb94d44d68761a698c63d4f2eff47e04418a9dcbdd8351d18cd3640c54d4eb9.tar.gz', 'saveoutput': 1, 'publication': 0, 'jobarch': 'slc6_amd64_gcc630', 'totalunits': 0, 'splitalgo': 'EventAwareLumiBased', 'ignoreglobalblacklist': 0, 'nonvaliddata': 0, 'dbsurl': 'https://cmsweb.cern.ch/dbs/prod/global/DBSReader', 'publishgroupname': 0, 'jobtype': 'Analysis', 'publishname2': ''} 
+DEBUG 2019-05-13 19:26:48,711: 	 Encoded submit request: maxjobruntime=1250&lfn=%2Fstore%2Fgroup%2Fphys_exotica%2FdarkPhoton%2Fschhibra%2FScoutingNTuples2017&savelogsflag=0&useparent=0&scriptexe=exec.sh&asyncdest=T2_CH_CERN&algoargs=10000&cachefilename=a91432ba4693afbbde9dbfbf3a45ce6415c548894da6deac0dabcf6ac4d297eb.tar.gz&numcores=1&generator=pythia&maxmemory=2000&publishdbsurl=https%3A%2F%2Fcmsweb.cern.ch%2Fdbs%2Fprod%2Fphys03%2FDBSWriter&priority=10&jobsw=CMSSW_9_4_14&primarydataset=&inputdata=%2FDarkPhotonToMuMu_M30_madgraph_pythia8_TuneCP5%2FRunIIFall17DRPremix-PU2017_94X_mc2017_realistic_v11-v1%2FAODSIM&ignorelocality=0&dryrun=0&workflow=crab_20190513_192641&cacheurl=https%3A%2F%2Fcmsweb.cern.ch%2Fcrabcache&nonprodsw=0&oneEventMode=0&debugfilename=5fb94d44d68761a698c63d4f2eff47e04418a9dcbdd8351d18cd3640c54d4eb9.tar.gz&saveoutput=1&publication=0&jobarch=slc6_amd64_gcc630&totalunits=0&splitalgo=EventAwareLumiBased&ignoreglobalblacklist=0&nonvaliddata=0&dbsurl=https%3A%2F%2Fcmsweb.cern.ch%2Fdbs%2Fprod%2Fglobal%2FDBSReader&publishgroupname=0&jobtype=Analysis&publishname2=&tfileoutfiles=tree_scout.root
+DEBUG 2019-05-13 19:26:48,990: 	 Result: {u'result': [{u'RequestName': u'190513_172648:schhibra_crab_20190513_192641'}]}
+INFO 2019-05-13 19:26:48,993: 	 Success: Your task has been delivered to the CRAB3 server.
+INFO 2019-05-13 19:26:48,993: 	 Task name: 190513_172648:schhibra_crab_20190513_192641
+INFO 2019-05-13 19:26:48,993: 	 Project dir: ./crab_20190513_192641
+INFO 2019-05-13 19:26:48,993: 	 Please use 'crab status -d ./crab_20190513_192641' to check how the submission process proceeds.
+DEBUG 2019-05-13 19:26:48,993: 	 About to return
+INFO 2019-05-13 19:26:48,996: 	 Log file is /afs/cern.ch/work/s/schhibra/DarkPhotonSearch_v2/CMSSW_9_4_14/src/ScoutingAnalysis/TreeMaker/crab/ZdScoutingM30_L1_12_5_L1_15_7_Official_AccXEff/crab_20190513_192641/crab.log
+DEBUG 2019-05-17 19:15:23,975: 	 Executing command: 'status'
+DEBUG 2019-05-17 19:15:23,975: 	 Found CRAB cache file /afs/cern.ch/user/s/schhibra/.crab3
+DEBUG 2019-05-17 19:15:24,034: 	 Checking credentials
+DEBUG 2019-05-17 19:15:24,035: 	 Found proxy file /tmp/x509up_u59012
+DEBUG 2019-05-17 19:15:24,035: 	 Getting proxy life time left
+DEBUG 2019-05-17 19:15:25,545: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u59012 -timeleft
+ output : 584182
+
+ error: 
+ retcode : 0
+DEBUG 2019-05-17 19:15:26,455: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u59012 -actimeleft
+ output : 584180
+
+ error: 
+ retcode : 0
+DEBUG 2019-05-17 19:15:26,455: 	 Proxy lifetime 584182 secs is different from voms extension lifetime 584180 secs for proxy: /tmp/x509up_u59012
+DEBUG 2019-05-17 19:15:26,455: 	 Proxy valid for 162:16:20 hours
+DEBUG 2019-05-17 19:15:26,577: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=schhibra/CN=715612/CN=Simranjit Singh Chhibra
+
+ error: 
+ retcode : 0
+DEBUG 2019-05-17 19:15:26,577: 	 Checking credentials
+DEBUG 2019-05-17 19:15:26,577: 	 Found proxy file /tmp/x509up_u59012
+DEBUG 2019-05-17 19:15:26,577: 	 Getting proxy life time left
+DEBUG 2019-05-17 19:15:27,488: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u59012 -timeleft
+ output : 584180
+
+ error: 
+ retcode : 0
+DEBUG 2019-05-17 19:15:28,401: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u59012 -actimeleft
+ output : 584178
+
+ error: 
+ retcode : 0
+DEBUG 2019-05-17 19:15:28,402: 	 Proxy lifetime 584180 secs is different from voms extension lifetime 584178 secs for proxy: /tmp/x509up_u59012
+DEBUG 2019-05-17 19:15:28,402: 	 Proxy valid for 162:16:18 hours
+DEBUG 2019-05-17 19:15:28,542: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+DEBUG 2019-05-17 19:15:28,660: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=schhibra/CN=715612/CN=Simranjit Singh Chhibra
+
+ error: 
+ retcode : 0
+DEBUG 2019-05-17 19:15:28,661: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2019-05-17 19:15:28,661: 	 Calculating hash of /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=schhibra/CN=715612/CN=Simranjit Singh Chhibra_cmsweb.cern.ch for credential name
+DEBUG 2019-05-17 19:15:28,867: 	 Executing : 
+ command : myproxy-info -l 3841cd59f3d3480019d577f9a3ad69704f35aad0 -s myproxy.cern.ch
+ output : username: 3841cd59f3d3480019d577f9a3ad69704f35aad0
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=schhibra/CN=715612/CN=Simranjit Singh Chhibra
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+  timeleft: 701:52:51  (29.2 days)
+
+ error: 
+ retcode : 0
+DEBUG 2019-05-17 19:15:28,869: 	 Myproxy is valid: 2526771
+DEBUG 2019-05-17 19:15:28,870: 	 Command use: status
+DEBUG 2019-05-17 19:15:28,870: 	 Options use: ['ZdScoutingM30_L1_12_5_L1_15_7_Official_AccXEff/crab_20190513_192641/']
+DEBUG 2019-05-17 19:15:29,001: 	 CRABClient version: 3.3.1904
+DEBUG 2019-05-17 19:15:29,001: 	 Instance is prod
+DEBUG 2019-05-17 19:15:29,001: 	 Server base url is cmsweb.cern.ch
+DEBUG 2019-05-17 19:15:29,001: 	 Command url /crabserver/prod/workflow
+DEBUG 2019-05-17 19:15:29,174: 	 Got information from server oracle database: {u'result': [u'190513_172648:schhibra_crab_20190513_192641', u'None', u'None', u'SUBMITTED', u'SUBMIT', u'2019-05-13 17:26:48.967837', u'None', u'2019-05-13 17:27:46.913854', u'None', u'CMSSW_9_4_14', u'slc6_amd64_gcc630', u'/DarkPhotonToMuMu_M30_madgraph_pythia8_TuneCP5/RunIIFall17DRPremix-PU2017_94X_mc2017_realistic_v11-v1/AODSIM', u'F', u'0', u'[]', u'[]', u'EventAwareLumiBased', u"{'splitOnRun': False, 'events_per_job': 10000, 'halt_job_on_file_boundaries': False, 'runs': [], 'lumis': []}", u'a91432ba4693afbbde9dbfbf3a45ce6415c548894da6deac0dabcf6ac4d297eb.tar.gz', u'https://cmsweb.cern.ch/crabcache', u'schhibra', u'/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=schhibra/CN=715612/CN=Simranjit Singh Chhibra', u'cms', u'None', u'None', u'crab_20190513_192641-00000000000000000000000000000000', u'F', u'T2_CH_CERN', u'https://cmsweb.cern.ch/dbs/prod/global/DBSReader', u'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter', u'F', u'[]', u"['tree_scout.root']", u'[]', u'Analysis', u'pythia', u'None', u'{}', u'[]', u'F', u'crab-prod-tw01', u'[]', u'1250', u'1', u'2000', u'10', u'None', u'[]', u'http://vocms0194.cern.ch/mon/cms175/190513_172648:schhibra_crab_20190513_192641', u'exec.sh', u'[]', u'[]', u'https://cmsweb.cern.ch/crabserver/prod', u'cmsgwms-collector-global.cern.ch:9620,cmssrv221.fnal.gov:9620', u'crab3@vocms0194.cern.ch', u'F', u'[]', u'T', u'/store/group/phys_exotica/darkPhoton/schhibra/ScoutingNTuples2017', u'F', u'None', u'F', u'None', u'DarkPhotonToMuMu_M30_madgraph_pythia8_TuneCP5', u'None', u'5fb94d44d68761a698c63d4f2eff47e04418a9dcbdd8351d18cd3640c54d4eb9.tar.gz', u'37882364', u'filetransfers', u'F', u'188.184.104.130', u'0.0', u'None'], u'desc': {u'columns': [u'tm_taskname', u'tm_activity', u'panda_jobset_id', u'tm_task_status', u'tm_task_command', u'tm_start_time', u'tm_start_injection', u'tm_end_injection', u'tm_task_failure', u'tm_job_sw', u'tm_job_arch', u'tm_input_dataset', u'tm_nonvalid_input_dataset', u'tm_use_parent', u'tm_site_whitelist', u'tm_site_blacklist', u'tm_split_algo', u'tm_split_args', u'tm_user_sandbox', u'tm_cache_url', u'tm_username', u'tm_user_dn', u'tm_user_vo', u'tm_user_role', u'tm_user_group', u'tm_publish_name', u'tm_publish_groupname', u'tm_asyncdest', u'tm_dbs_url', u'tm_publish_dbs_url', u'tm_publication', u'tm_outfiles', u'tm_tfile_outfiles', u'tm_edm_outfiles', u'tm_job_type', u'tm_generator', u'tm_events_per_lumi', u'tm_arguments', u'panda_resubmitted_jobs', u'tm_save_logs', u'tw_name', u'tm_user_infiles', u'tm_maxjobruntime', u'tm_numcores', u'tm_maxmemory', u'tm_priority', u'tm_output_dataset', u'tm_task_warnings', u'tm_user_webdir', u'tm_scriptexe', u'tm_scriptargs', u'tm_extrajdl', u'tm_asourl', u'tm_collector', u'tm_schedd', u'tm_dry_run', u'tm_user_files', u'tm_transfer_outputs', u'tm_output_lfn', u'tm_ignore_locality', u'tm_fail_limit', u'tm_one_event_mode', u'tm_secondary_input_dataset', u'tm_primary_dataset', u'tm_last_publication', u'tm_debug_files', u'clusterid', u'tm_asodb', u'tm_ignore_global_blacklist', u'tm_submitter_ip_addr', u'tm_totalunits', u'tm_ddm_reqid']}}
+INFO 2019-05-17 19:15:29,176: 	 CRAB project directory:		/afs/cern.ch/work/s/schhibra/DarkPhotonSearch_v2/CMSSW_9_4_14/src/ScoutingAnalysis/TreeMaker/crab/ZdScoutingM30_L1_12_5_L1_15_7_Official_AccXEff/crab_20190513_192641
+INFO 2019-05-17 19:15:29,176: 	 Task name:			190513_172648:schhibra_crab_20190513_192641
+INFO 2019-05-17 19:15:29,176: 	 Grid scheduler - Task Worker:	crab3@vocms0194.cern.ch - crab-prod-tw01
+INFO 2019-05-17 19:15:29,176: 	 Status on the CRAB server:	SUBMITTED
+INFO 2019-05-17 19:15:29,176: 	 Task URL to use for HELP:	https://cmsweb.cern.ch/crabserver/ui/task/190513_172648%3Aschhibra_crab_20190513_192641
+INFO 2019-05-17 19:15:29,177: 	 Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=schhibra&refresh=0&table=Jobs&p=1&records=25&activemenu=2&status=&site=&tid=190513_172648%3Aschhibra_crab_20190513_192641
+INFO 2019-05-17 19:15:29,177: 	 New dashboard monitoring URL:	https://monit-grafana.cern.ch/d/cmsTMDetail/cms-task-monitoring-task-view?orgId=11&var-user=schhibra&var-task=190513_172648%3Aschhibra_crab_20190513_192641
+INFO 2019-05-17 19:15:29,177: 	 In case of issues with the new dashboard, please provide feedback to hn-cms-computing-tools@cern.ch
+DEBUG 2019-05-17 19:15:29,177: 	 The CRAB server submitted your task to the Grid scheduler (cluster ID: 37882364)
+DEBUG 2019-05-17 19:15:29,177: 	 Webdir is located at http://vocms0194.cern.ch/mon/cms175/190513_172648:schhibra_crab_20190513_192641
+DEBUG 2019-05-17 19:15:29,342: 	 Proxied webdir is located at https://cmsweb.cern.ch/scheddmon/0194/cms175/190513_172648:schhibra_crab_20190513_192641
+DEBUG 2019-05-17 19:15:29,342: 	 Retrieving 'status_cache' file from https://cmsweb.cern.ch/scheddmon/0194/cms175/190513_172648:schhibra_crab_20190513_192641/status_cache
+DEBUG 2019-05-17 19:15:29,746: 	 Got information from status cache file: {'1': {'Retries': 0, 'WallDurations': [9.0, 791.0], 'StartTimes': [1557877673.0], 'SubmitTimes': [1557768478.0], 'JobIds': ['37882405.0'], 'EndTimes': [1557878464.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [689188], 'TotalUserCpuTimeHistory': [170], 'SiteHistory': ['Unknown', 'T2_IT_Legnaro'], 'TotalSysCpuTimeHistory': [4]}, '3': {'Retries': 0, 'WallDurations': [8.0, 568.0], 'StartTimes': [1557877675.0], 'SubmitTimes': [1557768481.0], 'JobIds': ['37882408.0'], 'EndTimes': [1557878243.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [711140], 'TotalUserCpuTimeHistory': [236], 'SiteHistory': ['Unknown', 'T2_IT_Legnaro'], 'TotalSysCpuTimeHistory': [7]}, '2': {'Retries': 0, 'WallDurations': [9.0, 719.0], 'StartTimes': [1557877673.0], 'SubmitTimes': [1557768479.0], 'JobIds': ['37882407.0'], 'EndTimes': [1557878392.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [701520], 'TotalUserCpuTimeHistory': [246], 'SiteHistory': ['Unknown', 'T2_IT_Legnaro'], 'TotalSysCpuTimeHistory': [7]}, '5': {'Retries': 0, 'WallDurations': [9.0, 886.0], 'StartTimes': [1557877676.0], 'SubmitTimes': [1557768481.0], 'JobIds': ['37882411.0'], 'EndTimes': [1557878562.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [716320], 'TotalUserCpuTimeHistory': [242], 'SiteHistory': ['Unknown', 'T2_IT_Legnaro'], 'TotalSysCpuTimeHistory': [8]}, '4': {'Retries': 0, 'WallDurations': [9.0, 871.0], 'StartTimes': [1557877676.0], 'SubmitTimes': [1557768481.0], 'JobIds': ['37882414.0'], 'EndTimes': [1557878547.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'finished', 'ResidentSetSize': [701152], 'TotalUserCpuTimeHistory': [228], 'SiteHistory': ['Unknown', 'T2_IT_Legnaro'], 'TotalSysCpuTimeHistory': [8]}}
+INFO 2019-05-17 19:15:29,746: 	 Status on the scheduler:	COMPLETED
+INFO 2019-05-17 19:15:29,746: 	 
+Jobs status:                    finished     		100.0% (5/5)
+INFO 2019-05-17 19:15:29,746: 	 
+No publication information (publication has been disabled in the CRAB configuration file)
+INFO 2019-05-17 19:15:29,747: 	 
+Warning: the max jobs runtime is less than 30% of the task requested value (1250 min), please consider to request a lower value for failed jobs (allowed through crab resubmit) and/or improve the jobs splitting (e.g. config.Data.splitting = 'Automatic') in a new task.
+INFO 2019-05-17 19:15:29,747: 	 
+Warning: the average jobs CPU efficiency is less than 50%, please consider to improve the jobs splitting (e.g. config.Data.splitting = 'Automatic') in a new task
+INFO 2019-05-17 19:15:29,747: 	 
+Summary of run jobs:
+ * Memory: 694MB min, 699MB max, 687MB ave
+ * Runtime: 0:09:28 min, 0:14:46 max, 0:12:47 ave
+ * CPU eff: 22% min, 43% max, 30% ave
+ * Waste: 0:00:44 (1% of total)
+
+INFO 2019-05-17 19:15:29,806: 	 Log file is /afs/cern.ch/work/s/schhibra/DarkPhotonSearch_v2/CMSSW_9_4_14/src/ScoutingAnalysis/TreeMaker/crab/ZdScoutingM30_L1_12_5_L1_15_7_Official_AccXEff/crab_20190513_192641/crab.log

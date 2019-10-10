@@ -1,0 +1,8 @@
+tmp/slc6_amd64_gcc630/src/ScoutingAnalysis/TreeMaker/plugins/ScoutingAnalysisTreeMakerAuto/LHEWeightsTreeMakerForScout.o: \
+ src/ScoutingAnalysis/TreeMaker/plugins/LHEWeightsTreeMakerForScout.cc \
+
+tmp/slc6_amd64_gcc630/src/ScoutingAnalysis/TreeMaker/plugins/ScoutingAnalysisTreeMakerAuto/TreeMaker.o: \
+ src/ScoutingAnalysis/TreeMaker/plugins/TreeMaker.cc \
+ src/ScoutingAnalysis/TreeMaker/src/RoccoR.cc \
+ src/ScoutingAnalysis/TreeMaker/src/../interface/RoccoR.h \
+

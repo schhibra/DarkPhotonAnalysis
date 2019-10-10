@@ -1,0 +1,7 @@
+Default  0	    1  
+Stat     1          100
+Zpt      2          1  
+Ewk      3          1  
+Ewk      3          1
+deltaM   4          1
+Ewk2     5          1

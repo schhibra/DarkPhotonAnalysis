@@ -1,0 +1,1 @@
+ScoutingAnalysisTreeMakerAuto ScoutingAnalysis/TreeMaker/pluginsLHEWeightsTreeMakerForScout.cc ScoutingAnalysis/TreeMaker/pluginsTreeMaker.cc

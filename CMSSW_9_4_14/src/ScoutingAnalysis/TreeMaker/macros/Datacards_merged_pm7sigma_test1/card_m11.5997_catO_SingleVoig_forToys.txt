@@ -1,0 +1,21 @@
+imax *                                                                                                                        
+jmax *                                                                                                                        
+kmax *                                                                                                                        
+------------                                                                                                                  
+shapes dp17     catO     card_m11.5997_catO_workspace_SingleVoig.root     w:sig_mass_dp17_catO_pdf     
+shapes dp18     catO     card_m11.5997_catO_workspace_SingleVoig.root     w:sig_mass_dp18_catO_pdf     
+shapes bkg      catO     card_m11.5997_catO_workspace_SingleVoig.root     w:bkg_mass_catO_pdf     
+shapes data_obs catO     card_m11.5997_catO_workspace_SingleVoig.root     w:data_obs                
+------------                                                                                                                  
+bin             catO
+observation        -1                                                                                                         
+------------                                                                                                                  
+bin                                    catO    catO    catO
+process                                dp17       dp18       bkg         
+process                                -1         0          1           
+rate                                    1         1          1           
+------------
+## Dark photon mass : 11.5997
+CMS_dp_scale17O           param      0              0.000001   
+CMS_dp_scale18O           param      0              0.000001   
+CMS_dp_res                  param      0             0.000001           

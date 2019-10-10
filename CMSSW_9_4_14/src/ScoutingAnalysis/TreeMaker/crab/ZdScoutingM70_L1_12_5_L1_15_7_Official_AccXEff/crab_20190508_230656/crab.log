@@ -1,0 +1,513 @@
+DEBUG 2019-05-08 23:06:54,836: 	 Executing command: 'submit'
+DEBUG 2019-05-08 23:06:54,837: 	 Found CRAB cache file /afs/cern.ch/user/s/schhibra/.crab3
+DEBUG 2019-05-08 23:06:54,849: 	 Checking credentials
+DEBUG 2019-05-08 23:06:54,850: 	 Found proxy file /tmp/x509up_u59012
+DEBUG 2019-05-08 23:06:54,850: 	 Getting proxy life time left
+DEBUG 2019-05-08 23:06:55,857: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u59012 -timeleft
+ output : 597027
+
+ error: 
+ retcode : 0
+DEBUG 2019-05-08 23:06:56,779: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u59012 -actimeleft
+ output : 597026
+
+ error: 
+ retcode : 0
+DEBUG 2019-05-08 23:06:56,779: 	 Proxy lifetime 597027 secs is different from voms extension lifetime 597026 secs for proxy: /tmp/x509up_u59012
+DEBUG 2019-05-08 23:06:56,779: 	 Proxy valid for 165:50:26 hours
+INFO 2019-05-08 23:06:56,780: 	 Will use CRAB configuration file crabConfig.py
+DEBUG 2019-05-08 23:06:56,780: 	 Loading CRAB configuration file.
+DEBUG 2019-05-08 23:06:56,787: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2019-05-08 23:06:56,915: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=schhibra/CN=715612/CN=Simranjit Singh Chhibra
+
+ error: 
+ retcode : 0
+DEBUG 2019-05-08 23:06:56,916: 	 Checking credentials
+DEBUG 2019-05-08 23:06:56,916: 	 Found proxy file /tmp/x509up_u59012
+DEBUG 2019-05-08 23:06:56,916: 	 Getting proxy life time left
+DEBUG 2019-05-08 23:06:57,827: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u59012 -timeleft
+ output : 597025
+
+ error: 
+ retcode : 0
+DEBUG 2019-05-08 23:06:58,842: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u59012 -actimeleft
+ output : 597024
+
+ error: 
+ retcode : 0
+DEBUG 2019-05-08 23:06:58,842: 	 Proxy lifetime 597025 secs is different from voms extension lifetime 597024 secs for proxy: /tmp/x509up_u59012
+DEBUG 2019-05-08 23:06:58,843: 	 Proxy valid for 165:50:24 hours
+DEBUG 2019-05-08 23:06:59,854: 	 Executing : 
+ command : env X509_USER_PROXY=/tmp/x509up_u59012 voms-proxy-info -fqan
+ output : /cms/Role=NULL/Capability=NULL
+
+ error: 
+ retcode : 0
+DEBUG 2019-05-08 23:07:00,002: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+DEBUG 2019-05-08 23:07:00,123: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=schhibra/CN=715612/CN=Simranjit Singh Chhibra
+
+ error: 
+ retcode : 0
+DEBUG 2019-05-08 23:07:00,123: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2019-05-08 23:07:00,123: 	 Calculating hash of /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=schhibra/CN=715612/CN=Simranjit Singh Chhibra_cmsweb.cern.ch for credential name
+DEBUG 2019-05-08 23:07:00,330: 	 Executing : 
+ command : myproxy-info -l 3841cd59f3d3480019d577f9a3ad69704f35aad0 -s myproxy.cern.ch
+ output : username: 3841cd59f3d3480019d577f9a3ad69704f35aad0
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=schhibra/CN=715612/CN=Simranjit Singh Chhibra
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+  timeleft: 547:17:23  (22.8 days)
+
+ error: 
+ retcode : 0
+DEBUG 2019-05-08 23:07:00,332: 	 Myproxy is valid: 1970243
+DEBUG 2019-05-08 23:07:00,332: 	 Command use: submit
+DEBUG 2019-05-08 23:07:00,332: 	 Options use: ['crabConfig.py']
+DEBUG 2019-05-08 23:07:00,476: 	 CRABClient version: 3.3.1904
+DEBUG 2019-05-08 23:07:00,477: 	 Instance is prod
+DEBUG 2019-05-08 23:07:00,477: 	 Server base url is cmsweb.cern.ch
+DEBUG 2019-05-08 23:07:00,477: 	 Command url /crabserver/prod/workflow
+DEBUG 2019-05-08 23:07:00,477: 	 Started submission
+DEBUG 2019-05-08 23:07:00,477: 	 Working on /afs/cern.ch/work/s/schhibra/DarkPhotonSearch_v2/CMSSW_9_4_14/src/ScoutingAnalysis/TreeMaker/crab/ZdScoutingM70_L1_12_5_L1_15_7_Official_AccXEff/crab_20190508_230656
+DEBUG 2019-05-08 23:07:00,598: 	 Loading required information from the environment
+DEBUG 2019-05-08 23:07:00,598: 	 Found CMSSW_9_4_14 for slc6_amd64_gcc630 with base /afs/cern.ch/work/s/schhibra/DarkPhotonSearch_v2/CMSSW_9_4_14
+DEBUG 2019-05-08 23:07:00,598: 	 Loading required information from the environment
+DEBUG 2019-05-08 23:07:00,598: 	 Found CMSSW_9_4_14 for slc6_amd64_gcc630 with base /afs/cern.ch/work/s/schhibra/DarkPhotonSearch_v2/CMSSW_9_4_14
+DEBUG 2019-05-08 23:07:00,625: 	 UNIQUE NAME: tarUUID 720d1cab-1844-4e5e-8811-e6cad91499c2 
+DEBUG 2019-05-08 23:07:00,626: 	 self.config: from WMCore.Configuration import Configuration
+config = Configuration()
+config.section_('General')
+config.section_('JobType')
+config.JobType.psetName = '../../test/tree_scout_cfg.py'
+config.JobType.pluginName = 'Analysis'
+config.JobType.inputFiles = ['../Rochester.tar.gz']
+config.JobType.pyCfgParams = ['isMC=True', 'useLHEWeights=True', 'GlobalTag=94X_mc2017_realistic_v11', 'roccorData=Rochester/RoccoR2017.txt']
+config.JobType.scriptExe = '../exec.sh'
+config.section_('Data')
+config.Data.inputDataset = '/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/RunIIFall17DRPremix-PU2017_94X_mc2017_realistic_v11-v1/AODSIM'
+config.Data.unitsPerJob = 10000
+config.Data.publication = False
+config.Data.splitting = 'EventAwareLumiBased'
+config.Data.outLFNDirBase = '/store/group/phys_exotica/darkPhoton/schhibra/ScoutingNTuples2017'
+config.section_('Site')
+config.Site.storageSite = 'T2_CH_CERN'
+config.section_('User')
+config.section_('Debug')
+
+DEBUG 2019-05-08 23:07:00,626: 	 self.config.JobType.psetName: ../../test/tree_scout_cfg.py
+INFO 2019-05-08 23:07:00,626: 	 Importing CMSSW configuration ../../test/tree_scout_cfg.py
+DEBUG 2019-05-08 23:07:00,626: 	 Additional parameters for the CMSSW configuration are: ['isMC=True', 'useLHEWeights=True', 'GlobalTag=94X_mc2017_realistic_v11', 'roccorData=Rochester/RoccoR2017.txt']
+INFO 2019-05-08 23:07:02,757: 	 Finished importing CMSSW configuration ../../test/tree_scout_cfg.py
+DEBUG 2019-05-08 23:07:02,758: 	 Writing CMSSW configuration to /afs/cern.ch/work/s/schhibra/DarkPhotonSearch_v2/CMSSW_9_4_14/src/ScoutingAnalysis/TreeMaker/crab/ZdScoutingM70_L1_12_5_L1_15_7_Official_AccXEff/crab_20190508_230656/inputs/PSet.py
+DEBUG 2019-05-08 23:07:03,215: 	 The following EDM output files will be collected: []
+DEBUG 2019-05-08 23:07:03,215: 	 The following TFile output files will be collected: ['tree_scout.root']
+DEBUG 2019-05-08 23:07:03,215: 	 The following user output files will be collected: []
+DEBUG 2019-05-08 23:07:03,216: 	 Loading required information from the environment
+DEBUG 2019-05-08 23:07:03,216: 	 Found CMSSW_9_4_14 for slc6_amd64_gcc630 with base /afs/cern.ch/work/s/schhibra/DarkPhotonSearch_v2/CMSSW_9_4_14
+DEBUG 2019-05-08 23:07:03,216: 	 Making tarball in /afs/cern.ch/work/s/schhibra/DarkPhotonSearch_v2/CMSSW_9_4_14/src/ScoutingAnalysis/TreeMaker/crab/ZdScoutingM70_L1_12_5_L1_15_7_Official_AccXEff/crab_20190508_230656/inputs/720d1cab-1844-4e5e-8811-e6cad91499c2default.tgz
+DEBUG 2019-05-08 23:07:03,224: 	 Checking directory /afs/cern.ch/work/s/schhibra/DarkPhotonSearch_v2/CMSSW_9_4_14/lib
+DEBUG 2019-05-08 23:07:03,224: 	 Adding directory /afs/cern.ch/work/s/schhibra/DarkPhotonSearch_v2/CMSSW_9_4_14/lib to tarball
+DEBUG 2019-05-08 23:07:03,317: 	 Checking directory /afs/cern.ch/work/s/schhibra/DarkPhotonSearch_v2/CMSSW_9_4_14/biglib
+DEBUG 2019-05-08 23:07:03,317: 	 Adding directory /afs/cern.ch/work/s/schhibra/DarkPhotonSearch_v2/CMSSW_9_4_14/biglib to tarball
+DEBUG 2019-05-08 23:07:03,318: 	 Checking directory /afs/cern.ch/work/s/schhibra/DarkPhotonSearch_v2/CMSSW_9_4_14/module
+DEBUG 2019-05-08 23:07:03,321: 	 Adding data directory /afs/cern.ch/work/s/schhibra/DarkPhotonSearch_v2/CMSSW_9_4_14/src/ScoutingAnalysis/TreeMaker/data to tarball
+DEBUG 2019-05-08 23:07:03,543: 	 Adding data directory /afs/cern.ch/work/s/schhibra/DarkPhotonSearch_v2/CMSSW_9_4_14/src/ScoutingAnalysis/TreeMaker/interface to tarball
+DEBUG 2019-05-08 23:07:03,564: 	 Adding file ../Rochester.tar.gz to tarball
+DEBUG 2019-05-08 23:07:03,947: 	 Uploading archive /afs/cern.ch/work/s/schhibra/DarkPhotonSearch_v2/CMSSW_9_4_14/src/ScoutingAnalysis/TreeMaker/crab/ZdScoutingM70_L1_12_5_L1_15_7_Official_AccXEff/crab_20190508_230656/inputs/720d1cab-1844-4e5e-8811-e6cad91499c2default.tgz (1.385742.1 MB) to the CRAB cache. Using URI https://cmsweb.cern.ch/crabcache
+DEBUG 2019-05-08 23:07:05,180: 	 Loading required information from the environment
+DEBUG 2019-05-08 23:07:05,181: 	 Found CMSSW_9_4_14 for slc6_amd64_gcc630 with base /afs/cern.ch/work/s/schhibra/DarkPhotonSearch_v2/CMSSW_9_4_14
+DEBUG 2019-05-08 23:07:05,181: 	 Making tarball in /afs/cern.ch/work/s/schhibra/DarkPhotonSearch_v2/CMSSW_9_4_14/src/ScoutingAnalysis/TreeMaker/crab/ZdScoutingM70_L1_12_5_L1_15_7_Official_AccXEff/crab_20190508_230656/inputs/debugFiles.tgz
+DEBUG 2019-05-08 23:07:05,189: 	 Uploading archive /afs/cern.ch/work/s/schhibra/DarkPhotonSearch_v2/CMSSW_9_4_14/src/ScoutingAnalysis/TreeMaker/crab/ZdScoutingM70_L1_12_5_L1_15_7_Official_AccXEff/crab_20190508_230656/inputs/debugFiles.tgz (2 KB) to the CRAB cache. Using URI https://cmsweb.cern.ch/crabcache
+DEBUG 2019-05-08 23:07:05,339: 	 Result uploading input files: 202ff77a57cd694dca7493871a5db3be4cad6fd6c3a711e91d5ea562ffe1ebed.tar.gz 
+INFO 2019-05-08 23:07:05,339: 	 Sending the request to the server
+DEBUG 2019-05-08 23:07:05,339: 	 Submitting {'maxjobruntime': 1250, 'extrajdl': [], 'lfn': '/store/group/phys_exotica/darkPhoton/schhibra/ScoutingNTuples2017', 'savelogsflag': 0, 'useparent': 0, 'scriptexe': 'exec.sh', 'asyncdest': 'T2_CH_CERN', 'algoargs': 10000, 'cachefilename': '202ff77a57cd694dca7493871a5db3be4cad6fd6c3a711e91d5ea562ffe1ebed.tar.gz', 'numcores': 1, 'addoutputfiles': [], 'generator': 'pythia', 'maxmemory': 2000, 'publishdbsurl': 'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter', 'priority': 10, 'jobsw': 'CMSSW_9_4_14', 'edmoutfiles': [], 'userfiles': [], 'primarydataset': '', 'inputdata': '/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/RunIIFall17DRPremix-PU2017_94X_mc2017_realistic_v11-v1/AODSIM', 'ignorelocality': 0, 'dryrun': 0, 'workflow': 'crab_20190508_230656', 'cacheurl': u'https://cmsweb.cern.ch/crabcache', 'nonprodsw': 0, 'tfileoutfiles': ['tree_scout.root'], 'oneEventMode': 0, 'debugfilename': 'fb68b91fdd74d1e8c9c7c2f7af836fe8c9a2729a50cb8451b84825f8eb286f7f.tar.gz', 'saveoutput': 1, 'publication': 0, 'jobarch': 'slc6_amd64_gcc630', 'totalunits': 0, 'splitalgo': 'EventAwareLumiBased', 'ignoreglobalblacklist': 0, 'nonvaliddata': 0, 'dbsurl': 'https://cmsweb.cern.ch/dbs/prod/global/DBSReader', 'publishgroupname': 0, 'jobtype': 'Analysis', 'publishname2': ''} 
+DEBUG 2019-05-08 23:07:05,340: 	 Encoded submit request: maxjobruntime=1250&lfn=%2Fstore%2Fgroup%2Fphys_exotica%2FdarkPhoton%2Fschhibra%2FScoutingNTuples2017&savelogsflag=0&useparent=0&scriptexe=exec.sh&asyncdest=T2_CH_CERN&algoargs=10000&cachefilename=202ff77a57cd694dca7493871a5db3be4cad6fd6c3a711e91d5ea562ffe1ebed.tar.gz&numcores=1&generator=pythia&maxmemory=2000&publishdbsurl=https%3A%2F%2Fcmsweb.cern.ch%2Fdbs%2Fprod%2Fphys03%2FDBSWriter&priority=10&jobsw=CMSSW_9_4_14&primarydataset=&inputdata=%2FDarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5%2FRunIIFall17DRPremix-PU2017_94X_mc2017_realistic_v11-v1%2FAODSIM&ignorelocality=0&dryrun=0&workflow=crab_20190508_230656&cacheurl=https%3A%2F%2Fcmsweb.cern.ch%2Fcrabcache&nonprodsw=0&oneEventMode=0&debugfilename=fb68b91fdd74d1e8c9c7c2f7af836fe8c9a2729a50cb8451b84825f8eb286f7f.tar.gz&saveoutput=1&publication=0&jobarch=slc6_amd64_gcc630&totalunits=0&splitalgo=EventAwareLumiBased&ignoreglobalblacklist=0&nonvaliddata=0&dbsurl=https%3A%2F%2Fcmsweb.cern.ch%2Fdbs%2Fprod%2Fglobal%2FDBSReader&publishgroupname=0&jobtype=Analysis&publishname2=&tfileoutfiles=tree_scout.root
+DEBUG 2019-05-08 23:07:05,616: 	 Result: {u'result': [{u'RequestName': u'190508_210705:schhibra_crab_20190508_230656'}]}
+INFO 2019-05-08 23:07:05,619: 	 Success: Your task has been delivered to the CRAB3 server.
+INFO 2019-05-08 23:07:05,619: 	 Task name: 190508_210705:schhibra_crab_20190508_230656
+INFO 2019-05-08 23:07:05,619: 	 Project dir: ./crab_20190508_230656
+INFO 2019-05-08 23:07:05,620: 	 Please use 'crab status -d ./crab_20190508_230656' to check how the submission process proceeds.
+DEBUG 2019-05-08 23:07:05,620: 	 About to return
+INFO 2019-05-08 23:07:05,624: 	 Log file is /afs/cern.ch/work/s/schhibra/DarkPhotonSearch_v2/CMSSW_9_4_14/src/ScoutingAnalysis/TreeMaker/crab/ZdScoutingM70_L1_12_5_L1_15_7_Official_AccXEff/crab_20190508_230656/crab.log
+DEBUG 2019-05-09 13:51:41,985: 	 Executing command: 'status'
+DEBUG 2019-05-09 13:51:41,985: 	 Found CRAB cache file /afs/cern.ch/user/s/schhibra/.crab3
+DEBUG 2019-05-09 13:51:42,040: 	 Checking credentials
+DEBUG 2019-05-09 13:51:42,041: 	 Found proxy file /tmp/x509up_u59012
+DEBUG 2019-05-09 13:51:42,041: 	 Getting proxy life time left
+DEBUG 2019-05-09 13:51:43,150: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u59012 -timeleft
+ output : 84967
+
+ error: 
+ retcode : 0
+DEBUG 2019-05-09 13:51:44,058: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u59012 -actimeleft
+ output : 84966
+
+ error: 
+ retcode : 0
+DEBUG 2019-05-09 13:51:44,059: 	 Proxy lifetime 84967 secs is different from voms extension lifetime 84966 secs for proxy: /tmp/x509up_u59012
+DEBUG 2019-05-09 13:51:44,059: 	 Proxy valid for 23:36:06 hours
+DEBUG 2019-05-09 13:51:44,265: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=schhibra/CN=715612/CN=Simranjit Singh Chhibra
+
+ error: 
+ retcode : 0
+DEBUG 2019-05-09 13:51:44,266: 	 Checking credentials
+DEBUG 2019-05-09 13:51:44,266: 	 Found proxy file /tmp/x509up_u59012
+DEBUG 2019-05-09 13:51:44,266: 	 Getting proxy life time left
+DEBUG 2019-05-09 13:51:45,173: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u59012 -timeleft
+ output : 84965
+
+ error: 
+ retcode : 0
+DEBUG 2019-05-09 13:51:46,084: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u59012 -actimeleft
+ output : 84964
+
+ error: 
+ retcode : 0
+DEBUG 2019-05-09 13:51:46,084: 	 Proxy lifetime 84965 secs is different from voms extension lifetime 84964 secs for proxy: /tmp/x509up_u59012
+DEBUG 2019-05-09 13:51:46,084: 	 Proxy valid for 23:36:04 hours
+DEBUG 2019-05-09 13:51:46,199: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+DEBUG 2019-05-09 13:51:46,315: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=schhibra/CN=715612/CN=Simranjit Singh Chhibra
+
+ error: 
+ retcode : 0
+DEBUG 2019-05-09 13:51:46,316: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2019-05-09 13:51:46,316: 	 Calculating hash of /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=schhibra/CN=715612/CN=Simranjit Singh Chhibra_cmsweb.cern.ch for credential name
+DEBUG 2019-05-09 13:51:46,521: 	 Executing : 
+ command : myproxy-info -l 3841cd59f3d3480019d577f9a3ad69704f35aad0 -s myproxy.cern.ch
+ output : username: 3841cd59f3d3480019d577f9a3ad69704f35aad0
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=schhibra/CN=715612/CN=Simranjit Singh Chhibra
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+  timeleft: 532:32:37  (22.2 days)
+
+ error: 
+ retcode : 0
+DEBUG 2019-05-09 13:51:46,522: 	 Myproxy is valid: 1917157
+DEBUG 2019-05-09 13:51:46,523: 	 Command use: status
+DEBUG 2019-05-09 13:51:46,523: 	 Options use: ['ZdScoutingM70_L1_12_5_L1_15_7_Official_AccXEff/crab_20190508_230656/']
+DEBUG 2019-05-09 13:51:46,663: 	 CRABClient version: 3.3.1904
+DEBUG 2019-05-09 13:51:46,663: 	 Instance is prod
+DEBUG 2019-05-09 13:51:46,663: 	 Server base url is cmsweb.cern.ch
+DEBUG 2019-05-09 13:51:46,663: 	 Command url /crabserver/prod/workflow
+DEBUG 2019-05-09 13:51:46,812: 	 Got information from server oracle database: {u'result': [u'190508_210705:schhibra_crab_20190508_230656', u'None', u'None', u'SUBMITTED', u'SUBMIT', u'2019-05-08 21:07:05.596473', u'None', u'2019-05-08 21:10:31.840204', u'None', u'CMSSW_9_4_14', u'slc6_amd64_gcc630', u'/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/RunIIFall17DRPremix-PU2017_94X_mc2017_realistic_v11-v1/AODSIM', u'F', u'0', u'[]', u'[]', u'EventAwareLumiBased', u"{'splitOnRun': False, 'events_per_job': 10000, 'halt_job_on_file_boundaries': False, 'runs': [], 'lumis': []}", u'202ff77a57cd694dca7493871a5db3be4cad6fd6c3a711e91d5ea562ffe1ebed.tar.gz', u'https://cmsweb.cern.ch/crabcache', u'schhibra', u'/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=schhibra/CN=715612/CN=Simranjit Singh Chhibra', u'cms', u'None', u'None', u'crab_20190508_230656-00000000000000000000000000000000', u'F', u'T2_CH_CERN', u'https://cmsweb.cern.ch/dbs/prod/global/DBSReader', u'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter', u'F', u'[]', u"['tree_scout.root']", u'[]', u'Analysis', u'pythia', u'None', u'{}', u'[]', u'F', u'crab-prod-tw01', u'[]', u'1250', u'1', u'2000', u'10', u'None', u'[]', u'http://vocms0195.cern.ch/mon/cms175/190508_210705:schhibra_crab_20190508_230656', u'exec.sh', u'[]', u'[]', u'https://cmsweb.cern.ch/crabserver/prod', u'cmsgwms-collector-global.cern.ch:9620,cmssrv221.fnal.gov:9620', u'crab3@vocms0195.cern.ch', u'F', u'[]', u'T', u'/store/group/phys_exotica/darkPhoton/schhibra/ScoutingNTuples2017', u'F', u'None', u'F', u'None', u'DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5', u'None', u'fb68b91fdd74d1e8c9c7c2f7af836fe8c9a2729a50cb8451b84825f8eb286f7f.tar.gz', u'37091640', u'filetransfers', u'F', u'188.185.115.30', u'0.0', u'None'], u'desc': {u'columns': [u'tm_taskname', u'tm_activity', u'panda_jobset_id', u'tm_task_status', u'tm_task_command', u'tm_start_time', u'tm_start_injection', u'tm_end_injection', u'tm_task_failure', u'tm_job_sw', u'tm_job_arch', u'tm_input_dataset', u'tm_nonvalid_input_dataset', u'tm_use_parent', u'tm_site_whitelist', u'tm_site_blacklist', u'tm_split_algo', u'tm_split_args', u'tm_user_sandbox', u'tm_cache_url', u'tm_username', u'tm_user_dn', u'tm_user_vo', u'tm_user_role', u'tm_user_group', u'tm_publish_name', u'tm_publish_groupname', u'tm_asyncdest', u'tm_dbs_url', u'tm_publish_dbs_url', u'tm_publication', u'tm_outfiles', u'tm_tfile_outfiles', u'tm_edm_outfiles', u'tm_job_type', u'tm_generator', u'tm_events_per_lumi', u'tm_arguments', u'panda_resubmitted_jobs', u'tm_save_logs', u'tw_name', u'tm_user_infiles', u'tm_maxjobruntime', u'tm_numcores', u'tm_maxmemory', u'tm_priority', u'tm_output_dataset', u'tm_task_warnings', u'tm_user_webdir', u'tm_scriptexe', u'tm_scriptargs', u'tm_extrajdl', u'tm_asourl', u'tm_collector', u'tm_schedd', u'tm_dry_run', u'tm_user_files', u'tm_transfer_outputs', u'tm_output_lfn', u'tm_ignore_locality', u'tm_fail_limit', u'tm_one_event_mode', u'tm_secondary_input_dataset', u'tm_primary_dataset', u'tm_last_publication', u'tm_debug_files', u'clusterid', u'tm_asodb', u'tm_ignore_global_blacklist', u'tm_submitter_ip_addr', u'tm_totalunits', u'tm_ddm_reqid']}}
+INFO 2019-05-09 13:51:46,813: 	 CRAB project directory:		/afs/cern.ch/work/s/schhibra/DarkPhotonSearch_v2/CMSSW_9_4_14/src/ScoutingAnalysis/TreeMaker/crab/ZdScoutingM70_L1_12_5_L1_15_7_Official_AccXEff/crab_20190508_230656
+INFO 2019-05-09 13:51:46,813: 	 Task name:			190508_210705:schhibra_crab_20190508_230656
+INFO 2019-05-09 13:51:46,813: 	 Grid scheduler - Task Worker:	crab3@vocms0195.cern.ch - crab-prod-tw01
+INFO 2019-05-09 13:51:46,813: 	 Status on the CRAB server:	SUBMITTED
+INFO 2019-05-09 13:51:46,813: 	 Task URL to use for HELP:	https://cmsweb.cern.ch/crabserver/ui/task/190508_210705%3Aschhibra_crab_20190508_230656
+INFO 2019-05-09 13:51:46,813: 	 Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=schhibra&refresh=0&table=Jobs&p=1&records=25&activemenu=2&status=&site=&tid=190508_210705%3Aschhibra_crab_20190508_230656
+INFO 2019-05-09 13:51:46,813: 	 New dashboard monitoring URL:	https://monit-grafana.cern.ch/d/cmsTMDetail/cms-task-monitoring-task-view?orgId=11&var-user=schhibra&var-task=190508_210705%3Aschhibra_crab_20190508_230656
+INFO 2019-05-09 13:51:46,813: 	 In case of issues with the new dashboard, please provide feedback to hn-cms-computing-tools@cern.ch
+DEBUG 2019-05-09 13:51:46,813: 	 The CRAB server submitted your task to the Grid scheduler (cluster ID: 37091640)
+DEBUG 2019-05-09 13:51:46,814: 	 Webdir is located at http://vocms0195.cern.ch/mon/cms175/190508_210705:schhibra_crab_20190508_230656
+DEBUG 2019-05-09 13:51:46,973: 	 Proxied webdir is located at https://cmsweb.cern.ch/scheddmon/0195/cms175/190508_210705:schhibra_crab_20190508_230656
+DEBUG 2019-05-09 13:51:46,973: 	 Retrieving 'status_cache' file from https://cmsweb.cern.ch/scheddmon/0195/cms175/190508_210705:schhibra_crab_20190508_230656/status_cache
+DEBUG 2019-05-09 13:51:47,082: 	 Got information from status cache file: {'1': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1557349845.0], 'JobIds': ['37091647.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '3': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1557349844.0], 'JobIds': ['37091646.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '2': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1557349844.0], 'JobIds': ['37091645.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '5': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1557349845.0], 'JobIds': ['37091649.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}, '4': {'Retries': 0, 'WallDurations': [0], 'StartTimes': [], 'SubmitTimes': [1557349845.0], 'JobIds': ['37091648.0'], 'EndTimes': [], 'Restarts': 0, 'RecordedSite': False, 'State': 'idle', 'ResidentSetSize': [0], 'TotalUserCpuTimeHistory': [0.0], 'SiteHistory': ['Unknown'], 'TotalSysCpuTimeHistory': [0.0]}}
+INFO 2019-05-09 13:51:47,082: 	 Status on the scheduler:	SUBMITTED
+INFO 2019-05-09 13:51:47,082: 	 
+Jobs status:                    idle         		100.0% (5/5)
+INFO 2019-05-09 13:51:47,082: 	 
+No publication information (publication has been disabled in the CRAB configuration file)
+INFO 2019-05-09 13:51:47,129: 	 Log file is /afs/cern.ch/work/s/schhibra/DarkPhotonSearch_v2/CMSSW_9_4_14/src/ScoutingAnalysis/TreeMaker/crab/ZdScoutingM70_L1_12_5_L1_15_7_Official_AccXEff/crab_20190508_230656/crab.log
+DEBUG 2019-05-12 18:59:09,523: 	 Executing command: 'status'
+DEBUG 2019-05-12 18:59:09,523: 	 Found CRAB cache file /afs/cern.ch/user/s/schhibra/.crab3
+DEBUG 2019-05-12 18:59:09,573: 	 Checking credentials
+DEBUG 2019-05-12 18:59:09,574: 	 Found proxy file /tmp/x509up_u59012
+DEBUG 2019-05-12 18:59:09,574: 	 Getting proxy life time left
+DEBUG 2019-05-12 18:59:10,480: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u59012 -timeleft
+ output : 85757
+
+ error: 
+ retcode : 0
+DEBUG 2019-05-12 18:59:11,389: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u59012 -actimeleft
+ output : 85755
+
+ error: 
+ retcode : 0
+DEBUG 2019-05-12 18:59:11,389: 	 Proxy lifetime 85757 secs is different from voms extension lifetime 85755 secs for proxy: /tmp/x509up_u59012
+DEBUG 2019-05-12 18:59:11,389: 	 Proxy valid for 23:49:15 hours
+DEBUG 2019-05-12 18:59:11,506: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=schhibra/CN=715612/CN=Simranjit Singh Chhibra
+
+ error: 
+ retcode : 0
+DEBUG 2019-05-12 18:59:11,507: 	 Checking credentials
+DEBUG 2019-05-12 18:59:11,507: 	 Found proxy file /tmp/x509up_u59012
+DEBUG 2019-05-12 18:59:11,507: 	 Getting proxy life time left
+DEBUG 2019-05-12 18:59:12,315: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u59012 -timeleft
+ output : 85755
+
+ error: 
+ retcode : 0
+DEBUG 2019-05-12 18:59:13,223: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u59012 -actimeleft
+ output : 85753
+
+ error: 
+ retcode : 0
+DEBUG 2019-05-12 18:59:13,224: 	 Proxy lifetime 85755 secs is different from voms extension lifetime 85753 secs for proxy: /tmp/x509up_u59012
+DEBUG 2019-05-12 18:59:13,224: 	 Proxy valid for 23:49:13 hours
+DEBUG 2019-05-12 18:59:13,395: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+DEBUG 2019-05-12 18:59:13,509: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=schhibra/CN=715612/CN=Simranjit Singh Chhibra
+
+ error: 
+ retcode : 0
+DEBUG 2019-05-12 18:59:13,510: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2019-05-12 18:59:13,510: 	 Calculating hash of /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=schhibra/CN=715612/CN=Simranjit Singh Chhibra_cmsweb.cern.ch for credential name
+DEBUG 2019-05-12 18:59:13,916: 	 Executing : 
+ command : myproxy-info -l 3841cd59f3d3480019d577f9a3ad69704f35aad0 -s myproxy.cern.ch
+ output : username: 3841cd59f3d3480019d577f9a3ad69704f35aad0
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=schhibra/CN=715612/CN=Simranjit Singh Chhibra
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+  timeleft: 455:25:10  (19.0 days)
+
+ error: 
+ retcode : 0
+DEBUG 2019-05-12 18:59:13,918: 	 Myproxy is valid: 1639510
+DEBUG 2019-05-12 18:59:13,919: 	 Command use: status
+DEBUG 2019-05-12 18:59:13,919: 	 Options use: ['ZdScoutingM70_L1_12_5_L1_15_7_Official_AccXEff/crab_20190508_230656/']
+DEBUG 2019-05-12 18:59:14,059: 	 CRABClient version: 3.3.1904
+DEBUG 2019-05-12 18:59:14,059: 	 Instance is prod
+DEBUG 2019-05-12 18:59:14,059: 	 Server base url is cmsweb.cern.ch
+DEBUG 2019-05-12 18:59:14,059: 	 Command url /crabserver/prod/workflow
+DEBUG 2019-05-12 18:59:14,229: 	 Got information from server oracle database: {u'result': [u'190508_210705:schhibra_crab_20190508_230656', u'None', u'None', u'SUBMITTED', u'SUBMIT', u'2019-05-08 21:07:05.596473', u'None', u'2019-05-08 21:10:31.840204', u'None', u'CMSSW_9_4_14', u'slc6_amd64_gcc630', u'/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/RunIIFall17DRPremix-PU2017_94X_mc2017_realistic_v11-v1/AODSIM', u'F', u'0', u'[]', u'[]', u'EventAwareLumiBased', u"{'splitOnRun': False, 'events_per_job': 10000, 'halt_job_on_file_boundaries': False, 'runs': [], 'lumis': []}", u'202ff77a57cd694dca7493871a5db3be4cad6fd6c3a711e91d5ea562ffe1ebed.tar.gz', u'https://cmsweb.cern.ch/crabcache', u'schhibra', u'/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=schhibra/CN=715612/CN=Simranjit Singh Chhibra', u'cms', u'None', u'None', u'crab_20190508_230656-00000000000000000000000000000000', u'F', u'T2_CH_CERN', u'https://cmsweb.cern.ch/dbs/prod/global/DBSReader', u'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter', u'F', u'[]', u"['tree_scout.root']", u'[]', u'Analysis', u'pythia', u'None', u'{}', u'[]', u'F', u'crab-prod-tw01', u'[]', u'1250', u'1', u'2000', u'10', u'None', u'[]', u'http://vocms0195.cern.ch/mon/cms175/190508_210705:schhibra_crab_20190508_230656', u'exec.sh', u'[]', u'[]', u'https://cmsweb.cern.ch/crabserver/prod', u'cmsgwms-collector-global.cern.ch:9620,cmssrv221.fnal.gov:9620', u'crab3@vocms0195.cern.ch', u'F', u'[]', u'T', u'/store/group/phys_exotica/darkPhoton/schhibra/ScoutingNTuples2017', u'F', u'None', u'F', u'None', u'DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5', u'None', u'fb68b91fdd74d1e8c9c7c2f7af836fe8c9a2729a50cb8451b84825f8eb286f7f.tar.gz', u'37091640', u'filetransfers', u'F', u'188.185.115.30', u'0.0', u'None'], u'desc': {u'columns': [u'tm_taskname', u'tm_activity', u'panda_jobset_id', u'tm_task_status', u'tm_task_command', u'tm_start_time', u'tm_start_injection', u'tm_end_injection', u'tm_task_failure', u'tm_job_sw', u'tm_job_arch', u'tm_input_dataset', u'tm_nonvalid_input_dataset', u'tm_use_parent', u'tm_site_whitelist', u'tm_site_blacklist', u'tm_split_algo', u'tm_split_args', u'tm_user_sandbox', u'tm_cache_url', u'tm_username', u'tm_user_dn', u'tm_user_vo', u'tm_user_role', u'tm_user_group', u'tm_publish_name', u'tm_publish_groupname', u'tm_asyncdest', u'tm_dbs_url', u'tm_publish_dbs_url', u'tm_publication', u'tm_outfiles', u'tm_tfile_outfiles', u'tm_edm_outfiles', u'tm_job_type', u'tm_generator', u'tm_events_per_lumi', u'tm_arguments', u'panda_resubmitted_jobs', u'tm_save_logs', u'tw_name', u'tm_user_infiles', u'tm_maxjobruntime', u'tm_numcores', u'tm_maxmemory', u'tm_priority', u'tm_output_dataset', u'tm_task_warnings', u'tm_user_webdir', u'tm_scriptexe', u'tm_scriptargs', u'tm_extrajdl', u'tm_asourl', u'tm_collector', u'tm_schedd', u'tm_dry_run', u'tm_user_files', u'tm_transfer_outputs', u'tm_output_lfn', u'tm_ignore_locality', u'tm_fail_limit', u'tm_one_event_mode', u'tm_secondary_input_dataset', u'tm_primary_dataset', u'tm_last_publication', u'tm_debug_files', u'clusterid', u'tm_asodb', u'tm_ignore_global_blacklist', u'tm_submitter_ip_addr', u'tm_totalunits', u'tm_ddm_reqid']}}
+INFO 2019-05-12 18:59:14,230: 	 CRAB project directory:		/afs/cern.ch/work/s/schhibra/DarkPhotonSearch_v2/CMSSW_9_4_14/src/ScoutingAnalysis/TreeMaker/crab/ZdScoutingM70_L1_12_5_L1_15_7_Official_AccXEff/crab_20190508_230656
+INFO 2019-05-12 18:59:14,230: 	 Task name:			190508_210705:schhibra_crab_20190508_230656
+INFO 2019-05-12 18:59:14,230: 	 Grid scheduler - Task Worker:	crab3@vocms0195.cern.ch - crab-prod-tw01
+INFO 2019-05-12 18:59:14,230: 	 Status on the CRAB server:	SUBMITTED
+INFO 2019-05-12 18:59:14,230: 	 Task URL to use for HELP:	https://cmsweb.cern.ch/crabserver/ui/task/190508_210705%3Aschhibra_crab_20190508_230656
+INFO 2019-05-12 18:59:14,230: 	 Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=schhibra&refresh=0&table=Jobs&p=1&records=25&activemenu=2&status=&site=&tid=190508_210705%3Aschhibra_crab_20190508_230656
+INFO 2019-05-12 18:59:14,231: 	 New dashboard monitoring URL:	https://monit-grafana.cern.ch/d/cmsTMDetail/cms-task-monitoring-task-view?orgId=11&var-user=schhibra&var-task=190508_210705%3Aschhibra_crab_20190508_230656
+INFO 2019-05-12 18:59:14,231: 	 In case of issues with the new dashboard, please provide feedback to hn-cms-computing-tools@cern.ch
+DEBUG 2019-05-12 18:59:14,231: 	 The CRAB server submitted your task to the Grid scheduler (cluster ID: 37091640)
+DEBUG 2019-05-12 18:59:14,231: 	 Webdir is located at http://vocms0195.cern.ch/mon/cms175/190508_210705:schhibra_crab_20190508_230656
+DEBUG 2019-05-12 18:59:14,398: 	 Proxied webdir is located at https://cmsweb.cern.ch/scheddmon/0195/cms175/190508_210705:schhibra_crab_20190508_230656
+DEBUG 2019-05-12 18:59:14,399: 	 Retrieving 'status_cache' file from https://cmsweb.cern.ch/scheddmon/0195/cms175/190508_210705:schhibra_crab_20190508_230656/status_cache
+DEBUG 2019-05-12 18:59:14,725: 	 Got information from status cache file: {'1': {'Retries': 2, 'WallDurations': [112.0, 156.61269402503967, 9.0, 103.0, 9.0, 382.0], 'StartTimes': [1557455496.0, 1557456157.0, 1557456741.0], 'SubmitTimes': [1557349845.0, 1557455682.0, 1557456387.0], 'JobIds': ['37091647.0', '37140261.0', '37140292.0'], 'EndTimes': [1557455608.0, 1557456260.0, 1557457123.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [33160, 2396, 314592], 'Error': [8028, "Error while running CMSSW:\nFatal Exception\nAn exception of category 'FallbackFileOpenError' occurred while\n   [0] Constructing the EventProcessor\n   [1] Constructing input source of type PoolSource\n   [2] Calling RootFileSequenceBase::initTheFile()\n   [3] Calling StorageFactory::open()\n   [4] Calling XrdFile::open()\nException Message:\nFailed to open the file 'root://cmsxrootd.fnal.gov//store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/DAA062BB-D1FA-E811-AC1B-A4BF01125348.root'\n   Additional Info:\n      [a] open() failed with system error 'No such file or directory' (error code 2)\n      [b] Input file /cms/store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/DAA062BB-D1FA-E811-AC1B-A4BF01125348.root could not be opened.\nFallback Input file root://cmsxrootd.fnal.gov//store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/DAA062BB-D1FA-E811-AC1B-A4BF01125348.root also could not be opened.\nOriginal exception info is above; fallback exception info is below.\n      [c] XrdCl::File::Open(name='root://cmsxrootd.fnal.gov//store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/DAA062BB-D1FA-E811-AC1B-A4BF01125348.root', flags=0x10, permissions=0660) => error '[ERROR] Operation expired' (errno=0, code=206). No additional data servers were found.\n      [d] Last URL tried: root://cms-xrd-global.cern.ch:1094//store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/DAA062BB-D1FA-E811-AC1B-A4BF01125348.root?tried=+1213cmsxrootd2.fnal.gov1213xrootd.unl.edu,cmsio5.rc.ufl.edu\n      [e] Problematic data server: cms-xrd-global.cern.ch:1094\n      [f] Disabled source: cms-xrd-global.cern.ch:1094\n", {'type': 'Fatal Exception', 'details': "An exception of category 'FallbackFileOpenError' occurred while\n   [0] Constructing the EventProcessor\n   [1] Constructing input source of type PoolSource\n   [2] Calling RootFileSequenceBase::initTheFile()\n   [3] Calling StorageFactory::open()\n   [4] Calling XrdFile::open()\nException Message:\nFailed to open the file 'root://cmsxrootd.fnal.gov//store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/DAA062BB-D1FA-E811-AC1B-A4BF01125348.root'\n   Additional Info:\n      [a] open() failed with system error 'No such file or directory' (error code 2)\n      [b] Input file /cms/store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/DAA062BB-D1FA-E811-AC1B-A4BF01125348.root could not be opened.\nFallback Input file root://cmsxrootd.fnal.gov//store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/DAA062BB-D1FA-E811-AC1B-A4BF01125348.root also could not be opened.\nOriginal exception info is above; fallback exception info is below.\n      [c] XrdCl::File::Open(name='root://cmsxrootd.fnal.gov//store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/DAA062BB-D1FA-E811-AC1B-A4BF01125348.root', flags=0x10, permissions=0660) => error '[ERROR] Operation expired' (errno=0, code=206). No additional data servers were found.\n      [d] Last URL tried: root://cms-xrd-global.cern.ch:1094//store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/DAA062BB-D1FA-E811-AC1B-A4BF01125348.root?tried=+1213cmsxrootd2.fnal.gov1213xrootd.unl.edu,cmsio5.rc.ufl.edu\n      [e] Problematic data server: cms-xrd-global.cern.ch:1094\n      [f] Disabled source: cms-xrd-global.cern.ch:1094", 'exitCode': '8028'}], 'TotalUserCpuTimeHistory': [2, 5, 4], 'SiteHistory': ['Unknown', 'T2_US_Caltech', 'Unknown', 'T2_US_MIT', 'Unknown', 'T2_US_Vanderbilt'], 'TotalSysCpuTimeHistory': [0, 1, 1]}, '3': {'Retries': 2, 'WallDurations': [111.0, 149.61269402503967, 9.0, 389.0, 466.0], 'StartTimes': [1557455503.0, 1557456164.0, 1557456771.0], 'SubmitTimes': [1557349844.0, 1557455683.0, 1557456684.0], 'JobIds': ['37091646.0', '37140262.0', '37140299.0'], 'TotalUserCpuTimeHistory': [2, 4, 5], 'EndTimes': [1557455614.0, 1557456553.0, 1557457237.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [287960, 314452, 315516], 'Error': [8028, "Error while running CMSSW:\nFatal Exception\nAn exception of category 'FallbackFileOpenError' occurred while\n   [0] Constructing the EventProcessor\n   [1] Constructing input source of type PoolSource\n   [2] Calling RootFileSequenceBase::initTheFile()\n   [3] Calling StorageFactory::open()\n   [4] Calling XrdFile::open()\nException Message:\nFailed to open the file 'root://cmsxrootd.fnal.gov//store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/187CC7BC-10FB-E811-BB12-0CC47A5FBE31.root'\n   Additional Info:\n      [a] open() failed with system error 'No such file or directory' (error code 2)\n      [b] Input file file:/mnt/hadoop/cms/store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/187CC7BC-10FB-E811-BB12-0CC47A5FBE31.root could not be opened.\nFallback Input file root://cmsxrootd.fnal.gov//store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/187CC7BC-10FB-E811-BB12-0CC47A5FBE31.root also could not be opened.\nOriginal exception info is above; fallback exception info is below.\n      [c] XrdCl::File::Open(name='root://cmsxrootd.fnal.gov//store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/187CC7BC-10FB-E811-BB12-0CC47A5FBE31.root', flags=0x10, permissions=0660) => error '[ERROR] Server responded with an error: [3011] No servers are available to read the file.\n' (errno=3011, code=400). No additional data servers were found.\n      [d] Last URL tried: root://cms-xrd-global.cern.ch:1094//store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/187CC7BC-10FB-E811-BB12-0CC47A5FBE31.root?tried=+1213cmsxrootd2.fnal.gov1213xrootd.unl.edu,cmsio5.rc.ufl.edu\n      [e] Problematic data server: cms-xrd-global.cern.ch:1094\n      [f] Disabled source: cms-xrd-global.cern.ch:1094\n", {'type': 'Fatal Exception', 'details': "An exception of category 'FallbackFileOpenError' occurred while\n   [0] Constructing the EventProcessor\n   [1] Constructing input source of type PoolSource\n   [2] Calling RootFileSequenceBase::initTheFile()\n   [3] Calling StorageFactory::open()\n   [4] Calling XrdFile::open()\nException Message:\nFailed to open the file 'root://cmsxrootd.fnal.gov//store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/187CC7BC-10FB-E811-BB12-0CC47A5FBE31.root'\n   Additional Info:\n      [a] open() failed with system error 'No such file or directory' (error code 2)\n      [b] Input file file:/mnt/hadoop/cms/store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/187CC7BC-10FB-E811-BB12-0CC47A5FBE31.root could not be opened.\nFallback Input file root://cmsxrootd.fnal.gov//store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/187CC7BC-10FB-E811-BB12-0CC47A5FBE31.root also could not be opened.\nOriginal exception info is above; fallback exception info is below.\n      [c] XrdCl::File::Open(name='root://cmsxrootd.fnal.gov//store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/187CC7BC-10FB-E811-BB12-0CC47A5FBE31.root', flags=0x10, permissions=0660) => error '[ERROR] Server responded with an error: [3011] No servers are available to read the file.\n' (errno=3011, code=400). No additional data servers were found.\n      [d] Last URL tried: root://cms-xrd-global.cern.ch:1094//store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/187CC7BC-10FB-E811-BB12-0CC47A5FBE31.root?tried=+1213cmsxrootd2.fnal.gov1213xrootd.unl.edu,cmsio5.rc.ufl.edu\n      [e] Problematic data server: cms-xrd-global.cern.ch:1094\n      [f] Disabled source: cms-xrd-global.cern.ch:1094", 'exitCode': '8028'}], 'SiteHistory': ['Unknown', 'T2_US_Nebraska', 'Unknown', 'T2_US_Vanderbilt', 'T2_US_MIT'], 'TotalSysCpuTimeHistory': [0, 1, 0]}, '2': {'Retries': 2, 'WallDurations': [111.0, 154.61269402503967, 219.0, 242.31688904762268, 64.0, 291.1736550331116], 'StartTimes': [1557455498.0, 1557456011.0, 1557456563.0], 'SubmitTimes': [1557349844.0, 1557455682.0, 1557456356.0], 'JobIds': ['37091645.0', '37140260.0', '37140290.0'], 'TotalUserCpuTimeHistory': [2, 7, 1], 'EndTimes': [1557455609.0, 1557456230.0, 1557456627.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [323720, 4376, 12768], 'Error': [8028, "Error while running CMSSW:\nFatal Exception\nAn exception of category 'FallbackFileOpenError' occurred while\n   [0] Constructing the EventProcessor\n   [1] Constructing input source of type PoolSource\n   [2] Calling RootFileSequenceBase::initTheFile()\n   [3] Calling StorageFactory::open()\n   [4] Calling XrdFile::open()\nException Message:\nFailed to open the file 'root://cmsxrootd.fnal.gov//store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/DAA062BB-D1FA-E811-AC1B-A4BF01125348.root'\n   Additional Info:\n      [a] open() failed with system error 'No such file or directory' (error code 2)\n      [b] Input file /cms/store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/DAA062BB-D1FA-E811-AC1B-A4BF01125348.root could not be opened.\nFallback Input file root://cmsxrootd.fnal.gov//store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/DAA062BB-D1FA-E811-AC1B-A4BF01125348.root also could not be opened.\nOriginal exception info is above; fallback exception info is below.\n      [c] XrdCl::File::Open(name='root://cmsxrootd.fnal.gov//store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/DAA062BB-D1FA-E811-AC1B-A4BF01125348.root', flags=0x10, permissions=0660) => error '[ERROR] Server responded with an error: [3011] No servers are available to read the file.\n' (errno=3011, code=400). No additional data servers were found.\n      [d] Last URL tried: root://cms-xrd-global.cern.ch:1094//store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/DAA062BB-D1FA-E811-AC1B-A4BF01125348.root?tried=+1213cmsxrootd2.fnal.gov1213xrootd.unl.edu,\n      [e] Problematic data server: cms-xrd-global.cern.ch:1094\n      [f] Disabled source: cms-xrd-global.cern.ch:1094\n", {'type': 'Fatal Exception', 'details': "An exception of category 'FallbackFileOpenError' occurred while\n   [0] Constructing the EventProcessor\n   [1] Constructing input source of type PoolSource\n   [2] Calling RootFileSequenceBase::initTheFile()\n   [3] Calling StorageFactory::open()\n   [4] Calling XrdFile::open()\nException Message:\nFailed to open the file 'root://cmsxrootd.fnal.gov//store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/DAA062BB-D1FA-E811-AC1B-A4BF01125348.root'\n   Additional Info:\n      [a] open() failed with system error 'No such file or directory' (error code 2)\n      [b] Input file /cms/store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/DAA062BB-D1FA-E811-AC1B-A4BF01125348.root could not be opened.\nFallback Input file root://cmsxrootd.fnal.gov//store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/DAA062BB-D1FA-E811-AC1B-A4BF01125348.root also could not be opened.\nOriginal exception info is above; fallback exception info is below.\n      [c] XrdCl::File::Open(name='root://cmsxrootd.fnal.gov//store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/DAA062BB-D1FA-E811-AC1B-A4BF01125348.root', flags=0x10, permissions=0660) => error '[ERROR] Server responded with an error: [3011] No servers are available to read the file.\n' (errno=3011, code=400). No additional data servers were found.\n      [d] Last URL tried: root://cms-xrd-global.cern.ch:1094//store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/DAA062BB-D1FA-E811-AC1B-A4BF01125348.root?tried=+1213cmsxrootd2.fnal.gov1213xrootd.unl.edu,\n      [e] Problematic data server: cms-xrd-global.cern.ch:1094\n      [f] Disabled source: cms-xrd-global.cern.ch:1094", 'exitCode': '8028'}], 'SiteHistory': ['Unknown', 'T2_US_Nebraska', 'Unknown', 'T2_US_Nebraska', 'Unknown', 'T2_US_Vanderbilt'], 'TotalSysCpuTimeHistory': [0, 1, 0]}, '5': {'Retries': 2, 'WallDurations': [110.0, 145.61269402503967, 62.0, 89.31688904762268, 91.0, 217.17365503311157], 'StartTimes': [1557455507.0, 1557456164.0, 1557456637.0], 'SubmitTimes': [1557349845.0, 1557455688.0, 1557456357.0], 'JobIds': ['37091649.0', '37140263.0', '37140291.0'], 'TotalUserCpuTimeHistory': [2, 3, 0], 'EndTimes': [1557455617.0, 1557456226.0, 1557456728.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [91004, 21260, 2984], 'Error': [8028, "Error while running CMSSW:\nFatal Exception\nAn exception of category 'FallbackFileOpenError' occurred while\n   [0] Constructing the EventProcessor\n   [1] Constructing input source of type PoolSource\n   [2] Calling RootFileSequenceBase::initTheFile()\n   [3] Calling StorageFactory::open()\n   [4] Calling XrdFile::open()\nException Message:\nFailed to open the file 'root://cmsxrootd.fnal.gov//store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/AA876F0E-06FB-E811-AC1F-000E1EB004E0.root'\n   Additional Info:\n      [a] open() failed with system error 'No such file or directory' (error code 2)\n      [b] Input file /cms/store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/AA876F0E-06FB-E811-AC1F-000E1EB004E0.root could not be opened.\nFallback Input file root://cmsxrootd.fnal.gov//store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/AA876F0E-06FB-E811-AC1F-000E1EB004E0.root also could not be opened.\nOriginal exception info is above; fallback exception info is below.\n      [c] XrdCl::File::Open(name='root://cmsxrootd.fnal.gov//store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/AA876F0E-06FB-E811-AC1F-000E1EB004E0.root', flags=0x10, permissions=0660) => error '[ERROR] Server responded with an error: [3011] No servers are available to read the file.\n' (errno=3011, code=400). No additional data servers were found.\n      [d] Last URL tried: root://cms-xrd-global.cern.ch:1094//store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/AA876F0E-06FB-E811-AC1F-000E1EB004E0.root?tried=+1213cmsxrootd2.fnal.gov1213xrootd.unl.edu,\n      [e] Problematic data server: cms-xrd-global.cern.ch:1094\n      [f] Disabled source: cms-xrd-global.cern.ch:1094\n", {'type': 'Fatal Exception', 'details': "An exception of category 'FallbackFileOpenError' occurred while\n   [0] Constructing the EventProcessor\n   [1] Constructing input source of type PoolSource\n   [2] Calling RootFileSequenceBase::initTheFile()\n   [3] Calling StorageFactory::open()\n   [4] Calling XrdFile::open()\nException Message:\nFailed to open the file 'root://cmsxrootd.fnal.gov//store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/AA876F0E-06FB-E811-AC1F-000E1EB004E0.root'\n   Additional Info:\n      [a] open() failed with system error 'No such file or directory' (error code 2)\n      [b] Input file /cms/store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/AA876F0E-06FB-E811-AC1F-000E1EB004E0.root could not be opened.\nFallback Input file root://cmsxrootd.fnal.gov//store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/AA876F0E-06FB-E811-AC1F-000E1EB004E0.root also could not be opened.\nOriginal exception info is above; fallback exception info is below.\n      [c] XrdCl::File::Open(name='root://cmsxrootd.fnal.gov//store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/AA876F0E-06FB-E811-AC1F-000E1EB004E0.root', flags=0x10, permissions=0660) => error '[ERROR] Server responded with an error: [3011] No servers are available to read the file.\n' (errno=3011, code=400). No additional data servers were found.\n      [d] Last URL tried: root://cms-xrd-global.cern.ch:1094//store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/AA876F0E-06FB-E811-AC1F-000E1EB004E0.root?tried=+1213cmsxrootd2.fnal.gov1213xrootd.unl.edu,\n      [e] Problematic data server: cms-xrd-global.cern.ch:1094\n      [f] Disabled source: cms-xrd-global.cern.ch:1094", 'exitCode': '8028'}], 'SiteHistory': ['Unknown', 'T2_US_Nebraska', 'Unknown', 'T2_US_Vanderbilt', 'Unknown', 'T2_US_Vanderbilt'], 'TotalSysCpuTimeHistory': [0, 0, 0]}, '4': {'Retries': 2, 'WallDurations': [10.0, 480.0, 609.0, 270.0], 'StartTimes': [1557455511.0, 1557456156.0, 1557457136.0], 'SubmitTimes': [1557349845.0, 1557456061.0, 1557456897.0], 'JobIds': ['37091648.0', '37140277.0', '37140338.0'], 'TotalUserCpuTimeHistory': [7, 4, 4], 'EndTimes': [1557455991.0, 1557456765.0, 1557457406.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [225360, 316348, 16328], 'Error': [8028, "Error while running CMSSW:\nFatal Exception\nAn exception of category 'FallbackFileOpenError' occurred while\n   [0] Constructing the EventProcessor\n   [1] Constructing input source of type PoolSource\n   [2] Calling RootFileSequenceBase::initTheFile()\n   [3] Calling StorageFactory::open()\n   [4] Calling XrdFile::open()\nException Message:\nFailed to open the file 'root://cmsxrootd.fnal.gov//store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/2E714AD7-17FB-E811-949D-34E6D7BDDEE8.root'\n   Additional Info:\n      [a] open() failed with system error 'No such file or directory' (error code 2)\n      [b] Input file /cms/store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/2E714AD7-17FB-E811-949D-34E6D7BDDEE8.root could not be opened.\nFallback Input file root://cmsxrootd.fnal.gov//store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/2E714AD7-17FB-E811-949D-34E6D7BDDEE8.root also could not be opened.\nOriginal exception info is above; fallback exception info is below.\n      [c] XrdCl::File::Open(name='root://cmsxrootd.fnal.gov//store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/2E714AD7-17FB-E811-949D-34E6D7BDDEE8.root', flags=0x10, permissions=0660) => error '[ERROR] Server responded with an error: [3011] No servers are available to read the file.\n' (errno=3011, code=400). No additional data servers were found.\n      [d] Last URL tried: root://cms-xrd-global.cern.ch:1094//store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/2E714AD7-17FB-E811-949D-34E6D7BDDEE8.root?tried=+1213cmsxrootd2.fnal.gov1213xrootd.unl.edu,cmsio5.rc.ufl.edu\n      [e] Problematic data server: cms-xrd-global.cern.ch:1094\n      [f] Disabled source: cms-xrd-global.cern.ch:1094\n", {'type': 'Fatal Exception', 'details': "An exception of category 'FallbackFileOpenError' occurred while\n   [0] Constructing the EventProcessor\n   [1] Constructing input source of type PoolSource\n   [2] Calling RootFileSequenceBase::initTheFile()\n   [3] Calling StorageFactory::open()\n   [4] Calling XrdFile::open()\nException Message:\nFailed to open the file 'root://cmsxrootd.fnal.gov//store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/2E714AD7-17FB-E811-949D-34E6D7BDDEE8.root'\n   Additional Info:\n      [a] open() failed with system error 'No such file or directory' (error code 2)\n      [b] Input file /cms/store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/2E714AD7-17FB-E811-949D-34E6D7BDDEE8.root could not be opened.\nFallback Input file root://cmsxrootd.fnal.gov//store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/2E714AD7-17FB-E811-949D-34E6D7BDDEE8.root also could not be opened.\nOriginal exception info is above; fallback exception info is below.\n      [c] XrdCl::File::Open(name='root://cmsxrootd.fnal.gov//store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/2E714AD7-17FB-E811-949D-34E6D7BDDEE8.root', flags=0x10, permissions=0660) => error '[ERROR] Server responded with an error: [3011] No servers are available to read the file.\n' (errno=3011, code=400). No additional data servers were found.\n      [d] Last URL tried: root://cms-xrd-global.cern.ch:1094//store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/2E714AD7-17FB-E811-949D-34E6D7BDDEE8.root?tried=+1213cmsxrootd2.fnal.gov1213xrootd.unl.edu,cmsio5.rc.ufl.edu\n      [e] Problematic data server: cms-xrd-global.cern.ch:1094\n      [f] Disabled source: cms-xrd-global.cern.ch:1094", 'exitCode': '8028'}], 'SiteHistory': ['Unknown', 'T2_US_Nebraska', 'T2_US_MIT', 'T2_US_Vanderbilt'], 'TotalSysCpuTimeHistory': [1, 0, 1]}}
+INFO 2019-05-12 18:59:14,725: 	 Status on the scheduler:	FAILED
+INFO 2019-05-12 18:59:14,726: 	 
+Jobs status:                    failed       		100.0% (5/5)
+INFO 2019-05-12 18:59:14,726: 	 
+No publication information (publication has been disabled in the CRAB configuration file)
+INFO 2019-05-12 18:59:14,726: 	 
+Error Summary: (use crab status --verboseErrors for details about the errors)
+
+5 jobs failed with exit code 8028
+
+Have a look at https://twiki.cern.ch/twiki/bin/viewauth/CMSPublic/JobExitCodes for a description of the exit codes.
+INFO 2019-05-12 18:59:14,726: 	 
+Warning: the max jobs runtime is less than 30% of the task requested value (1250 min), please consider to request a lower value for failed jobs (allowed through crab resubmit) and/or improve the jobs splitting (e.g. config.Data.splitting = 'Automatic') in a new task.
+INFO 2019-05-12 18:59:14,726: 	 
+Warning: the average jobs CPU efficiency is less than 50%, please consider to improve the jobs splitting (e.g. config.Data.splitting = 'Automatic') in a new task
+INFO 2019-05-12 18:59:14,726: 	 
+Summary of run jobs:
+ * Memory: 12MB min, 308MB max, 129MB ave
+ * Runtime: 0:03:37 min, 0:07:46 max, 0:05:25 ave
+ * CPU eff: 0% min, 2% max, 1% ave
+ * Waste: 0:57:16 (68% of total)
+
+INFO 2019-05-12 18:59:14,763: 	 Log file is /afs/cern.ch/work/s/schhibra/DarkPhotonSearch_v2/CMSSW_9_4_14/src/ScoutingAnalysis/TreeMaker/crab/ZdScoutingM70_L1_12_5_L1_15_7_Official_AccXEff/crab_20190508_230656/crab.log
+DEBUG 2019-05-12 19:01:30,741: 	 Executing command: 'resubmit'
+DEBUG 2019-05-12 19:01:30,742: 	 Found CRAB cache file /afs/cern.ch/user/s/schhibra/.crab3
+DEBUG 2019-05-12 19:01:30,755: 	 Checking credentials
+DEBUG 2019-05-12 19:01:30,756: 	 Found proxy file /tmp/x509up_u59012
+DEBUG 2019-05-12 19:01:30,756: 	 Getting proxy life time left
+DEBUG 2019-05-12 19:01:31,763: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u59012 -timeleft
+ output : 85616
+
+ error: 
+ retcode : 0
+DEBUG 2019-05-12 19:01:32,673: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u59012 -actimeleft
+ output : 85614
+
+ error: 
+ retcode : 0
+DEBUG 2019-05-12 19:01:32,674: 	 Proxy lifetime 85616 secs is different from voms extension lifetime 85614 secs for proxy: /tmp/x509up_u59012
+DEBUG 2019-05-12 19:01:32,674: 	 Proxy valid for 23:46:54 hours
+DEBUG 2019-05-12 19:01:32,800: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=schhibra/CN=715612/CN=Simranjit Singh Chhibra
+
+ error: 
+ retcode : 0
+DEBUG 2019-05-12 19:01:32,801: 	 Checking credentials
+DEBUG 2019-05-12 19:01:32,801: 	 Found proxy file /tmp/x509up_u59012
+DEBUG 2019-05-12 19:01:32,801: 	 Getting proxy life time left
+DEBUG 2019-05-12 19:01:33,711: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u59012 -timeleft
+ output : 85614
+
+ error: 
+ retcode : 0
+DEBUG 2019-05-12 19:01:34,524: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u59012 -actimeleft
+ output : 85612
+
+ error: 
+ retcode : 0
+DEBUG 2019-05-12 19:01:34,524: 	 Proxy lifetime 85614 secs is different from voms extension lifetime 85612 secs for proxy: /tmp/x509up_u59012
+DEBUG 2019-05-12 19:01:34,524: 	 Proxy valid for 23:46:52 hours
+DEBUG 2019-05-12 19:01:34,734: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+DEBUG 2019-05-12 19:01:34,849: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=schhibra/CN=715612/CN=Simranjit Singh Chhibra
+
+ error: 
+ retcode : 0
+DEBUG 2019-05-12 19:01:34,849: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2019-05-12 19:01:34,849: 	 Calculating hash of /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=schhibra/CN=715612/CN=Simranjit Singh Chhibra_cmsweb.cern.ch for credential name
+DEBUG 2019-05-12 19:01:35,355: 	 Executing : 
+ command : myproxy-info -l 3841cd59f3d3480019d577f9a3ad69704f35aad0 -s myproxy.cern.ch
+ output : username: 3841cd59f3d3480019d577f9a3ad69704f35aad0
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=schhibra/CN=715612/CN=Simranjit Singh Chhibra
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+  timeleft: 455:22:48  (19.0 days)
+
+ error: 
+ retcode : 0
+DEBUG 2019-05-12 19:01:35,357: 	 Myproxy is valid: 1639368
+DEBUG 2019-05-12 19:01:35,518: 	 Command use: resubmit
+DEBUG 2019-05-12 19:01:35,518: 	 Options use: ['ZdScoutingM70_L1_12_5_L1_15_7_Official_AccXEff/crab_20190508_230656/']
+DEBUG 2019-05-12 19:01:35,619: 	 CRABClient version: 3.3.1904
+DEBUG 2019-05-12 19:01:35,619: 	 Instance is prod
+DEBUG 2019-05-12 19:01:35,619: 	 Server base url is cmsweb.cern.ch
+DEBUG 2019-05-12 19:01:35,620: 	 Command url /crabserver/prod/workflow
+DEBUG 2019-05-12 19:01:35,620: 	 Executing command: 'status'
+DEBUG 2019-05-12 19:01:35,620: 	 Found CRAB cache file /afs/cern.ch/user/s/schhibra/.crab3
+DEBUG 2019-05-12 19:01:35,632: 	 Checking credentials
+DEBUG 2019-05-12 19:01:35,633: 	 Found proxy file /tmp/x509up_u59012
+DEBUG 2019-05-12 19:01:35,633: 	 Getting proxy life time left
+DEBUG 2019-05-12 19:01:36,540: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u59012 -timeleft
+ output : 85611
+
+ error: 
+ retcode : 0
+DEBUG 2019-05-12 19:01:37,456: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u59012 -actimeleft
+ output : 85609
+
+ error: 
+ retcode : 0
+DEBUG 2019-05-12 19:01:37,456: 	 Proxy lifetime 85611 secs is different from voms extension lifetime 85609 secs for proxy: /tmp/x509up_u59012
+DEBUG 2019-05-12 19:01:37,456: 	 Proxy valid for 23:46:49 hours
+DEBUG 2019-05-12 19:01:37,657: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=schhibra/CN=715612/CN=Simranjit Singh Chhibra
+
+ error: 
+ retcode : 0
+DEBUG 2019-05-12 19:01:37,658: 	 Checking credentials
+DEBUG 2019-05-12 19:01:37,658: 	 Found proxy file /tmp/x509up_u59012
+DEBUG 2019-05-12 19:01:37,659: 	 Getting proxy life time left
+DEBUG 2019-05-12 19:01:38,567: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u59012 -timeleft
+ output : 85609
+
+ error: 
+ retcode : 0
+DEBUG 2019-05-12 19:01:39,476: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u59012 -actimeleft
+ output : 85607
+
+ error: 
+ retcode : 0
+DEBUG 2019-05-12 19:01:39,476: 	 Proxy lifetime 85609 secs is different from voms extension lifetime 85607 secs for proxy: /tmp/x509up_u59012
+DEBUG 2019-05-12 19:01:39,476: 	 Proxy valid for 23:46:47 hours
+DEBUG 2019-05-12 19:01:39,642: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+DEBUG 2019-05-12 19:01:39,756: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=schhibra/CN=715612/CN=Simranjit Singh Chhibra
+
+ error: 
+ retcode : 0
+DEBUG 2019-05-12 19:01:39,757: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2019-05-12 19:01:39,757: 	 Calculating hash of /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=schhibra/CN=715612/CN=Simranjit Singh Chhibra_cmsweb.cern.ch for credential name
+DEBUG 2019-05-12 19:01:40,164: 	 Executing : 
+ command : myproxy-info -l 3841cd59f3d3480019d577f9a3ad69704f35aad0 -s myproxy.cern.ch
+ output : username: 3841cd59f3d3480019d577f9a3ad69704f35aad0
+owner: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=schhibra/CN=715612/CN=Simranjit Singh Chhibra
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=vocms(052|058|030|0118|0105|0109).cern.ch|/DC=ch/DC=cern/OU=computers/CN=crab-(preprod|prod)-tw(02|01).cern.ch
+  timeleft: 455:22:43  (19.0 days)
+
+ error: 
+ retcode : 0
+DEBUG 2019-05-12 19:01:40,165: 	 Myproxy is valid: 1639363
+DEBUG 2019-05-12 19:01:40,166: 	 Command use: status
+DEBUG 2019-05-12 19:01:40,166: 	 Options use: []
+DEBUG 2019-05-12 19:01:40,314: 	 CRABClient version: 3.3.1904
+DEBUG 2019-05-12 19:01:40,314: 	 Instance is prod
+DEBUG 2019-05-12 19:01:40,314: 	 Server base url is cmsweb.cern.ch
+DEBUG 2019-05-12 19:01:40,314: 	 Command url /crabserver/prod/workflow
+DEBUG 2019-05-12 19:01:40,464: 	 Got information from server oracle database: {u'result': [u'190508_210705:schhibra_crab_20190508_230656', u'None', u'None', u'SUBMITTED', u'SUBMIT', u'2019-05-08 21:07:05.596473', u'None', u'2019-05-08 21:10:31.840204', u'None', u'CMSSW_9_4_14', u'slc6_amd64_gcc630', u'/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/RunIIFall17DRPremix-PU2017_94X_mc2017_realistic_v11-v1/AODSIM', u'F', u'0', u'[]', u'[]', u'EventAwareLumiBased', u"{'splitOnRun': False, 'events_per_job': 10000, 'halt_job_on_file_boundaries': False, 'runs': [], 'lumis': []}", u'202ff77a57cd694dca7493871a5db3be4cad6fd6c3a711e91d5ea562ffe1ebed.tar.gz', u'https://cmsweb.cern.ch/crabcache', u'schhibra', u'/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=schhibra/CN=715612/CN=Simranjit Singh Chhibra', u'cms', u'None', u'None', u'crab_20190508_230656-00000000000000000000000000000000', u'F', u'T2_CH_CERN', u'https://cmsweb.cern.ch/dbs/prod/global/DBSReader', u'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter', u'F', u'[]', u"['tree_scout.root']", u'[]', u'Analysis', u'pythia', u'None', u'{}', u'[]', u'F', u'crab-prod-tw01', u'[]', u'1250', u'1', u'2000', u'10', u'None', u'[]', u'http://vocms0195.cern.ch/mon/cms175/190508_210705:schhibra_crab_20190508_230656', u'exec.sh', u'[]', u'[]', u'https://cmsweb.cern.ch/crabserver/prod', u'cmsgwms-collector-global.cern.ch:9620,cmssrv221.fnal.gov:9620', u'crab3@vocms0195.cern.ch', u'F', u'[]', u'T', u'/store/group/phys_exotica/darkPhoton/schhibra/ScoutingNTuples2017', u'F', u'None', u'F', u'None', u'DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5', u'None', u'fb68b91fdd74d1e8c9c7c2f7af836fe8c9a2729a50cb8451b84825f8eb286f7f.tar.gz', u'37091640', u'filetransfers', u'F', u'188.185.115.30', u'0.0', u'None'], u'desc': {u'columns': [u'tm_taskname', u'tm_activity', u'panda_jobset_id', u'tm_task_status', u'tm_task_command', u'tm_start_time', u'tm_start_injection', u'tm_end_injection', u'tm_task_failure', u'tm_job_sw', u'tm_job_arch', u'tm_input_dataset', u'tm_nonvalid_input_dataset', u'tm_use_parent', u'tm_site_whitelist', u'tm_site_blacklist', u'tm_split_algo', u'tm_split_args', u'tm_user_sandbox', u'tm_cache_url', u'tm_username', u'tm_user_dn', u'tm_user_vo', u'tm_user_role', u'tm_user_group', u'tm_publish_name', u'tm_publish_groupname', u'tm_asyncdest', u'tm_dbs_url', u'tm_publish_dbs_url', u'tm_publication', u'tm_outfiles', u'tm_tfile_outfiles', u'tm_edm_outfiles', u'tm_job_type', u'tm_generator', u'tm_events_per_lumi', u'tm_arguments', u'panda_resubmitted_jobs', u'tm_save_logs', u'tw_name', u'tm_user_infiles', u'tm_maxjobruntime', u'tm_numcores', u'tm_maxmemory', u'tm_priority', u'tm_output_dataset', u'tm_task_warnings', u'tm_user_webdir', u'tm_scriptexe', u'tm_scriptargs', u'tm_extrajdl', u'tm_asourl', u'tm_collector', u'tm_schedd', u'tm_dry_run', u'tm_user_files', u'tm_transfer_outputs', u'tm_output_lfn', u'tm_ignore_locality', u'tm_fail_limit', u'tm_one_event_mode', u'tm_secondary_input_dataset', u'tm_primary_dataset', u'tm_last_publication', u'tm_debug_files', u'clusterid', u'tm_asodb', u'tm_ignore_global_blacklist', u'tm_submitter_ip_addr', u'tm_totalunits', u'tm_ddm_reqid']}}
+INFO 2019-05-12 19:01:40,465: 	 CRAB project directory:		/afs/cern.ch/work/s/schhibra/DarkPhotonSearch_v2/CMSSW_9_4_14/src/ScoutingAnalysis/TreeMaker/crab/ZdScoutingM70_L1_12_5_L1_15_7_Official_AccXEff/crab_20190508_230656
+INFO 2019-05-12 19:01:40,465: 	 Task name:			190508_210705:schhibra_crab_20190508_230656
+INFO 2019-05-12 19:01:40,465: 	 Grid scheduler - Task Worker:	crab3@vocms0195.cern.ch - crab-prod-tw01
+INFO 2019-05-12 19:01:40,465: 	 Status on the CRAB server:	SUBMITTED
+INFO 2019-05-12 19:01:40,465: 	 Task URL to use for HELP:	https://cmsweb.cern.ch/crabserver/ui/task/190508_210705%3Aschhibra_crab_20190508_230656
+INFO 2019-05-12 19:01:40,465: 	 Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=schhibra&refresh=0&table=Jobs&p=1&records=25&activemenu=2&status=&site=&tid=190508_210705%3Aschhibra_crab_20190508_230656
+INFO 2019-05-12 19:01:40,465: 	 New dashboard monitoring URL:	https://monit-grafana.cern.ch/d/cmsTMDetail/cms-task-monitoring-task-view?orgId=11&var-user=schhibra&var-task=190508_210705%3Aschhibra_crab_20190508_230656
+INFO 2019-05-12 19:01:40,466: 	 In case of issues with the new dashboard, please provide feedback to hn-cms-computing-tools@cern.ch
+DEBUG 2019-05-12 19:01:40,466: 	 The CRAB server submitted your task to the Grid scheduler (cluster ID: 37091640)
+DEBUG 2019-05-12 19:01:40,466: 	 Webdir is located at http://vocms0195.cern.ch/mon/cms175/190508_210705:schhibra_crab_20190508_230656
+DEBUG 2019-05-12 19:01:40,600: 	 Proxied webdir is located at https://cmsweb.cern.ch/scheddmon/0195/cms175/190508_210705:schhibra_crab_20190508_230656
+DEBUG 2019-05-12 19:01:40,600: 	 Retrieving 'status_cache' file from https://cmsweb.cern.ch/scheddmon/0195/cms175/190508_210705:schhibra_crab_20190508_230656/status_cache
+DEBUG 2019-05-12 19:01:40,707: 	 Got information from status cache file: {'1': {'Retries': 2, 'WallDurations': [112.0, 156.61269402503967, 9.0, 103.0, 9.0, 382.0], 'StartTimes': [1557455496.0, 1557456157.0, 1557456741.0], 'SubmitTimes': [1557349845.0, 1557455682.0, 1557456387.0], 'JobIds': ['37091647.0', '37140261.0', '37140292.0'], 'EndTimes': [1557455608.0, 1557456260.0, 1557457123.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [33160, 2396, 314592], 'Error': [8028, "Error while running CMSSW:\nFatal Exception\nAn exception of category 'FallbackFileOpenError' occurred while\n   [0] Constructing the EventProcessor\n   [1] Constructing input source of type PoolSource\n   [2] Calling RootFileSequenceBase::initTheFile()\n   [3] Calling StorageFactory::open()\n   [4] Calling XrdFile::open()\nException Message:\nFailed to open the file 'root://cmsxrootd.fnal.gov//store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/DAA062BB-D1FA-E811-AC1B-A4BF01125348.root'\n   Additional Info:\n      [a] open() failed with system error 'No such file or directory' (error code 2)\n      [b] Input file /cms/store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/DAA062BB-D1FA-E811-AC1B-A4BF01125348.root could not be opened.\nFallback Input file root://cmsxrootd.fnal.gov//store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/DAA062BB-D1FA-E811-AC1B-A4BF01125348.root also could not be opened.\nOriginal exception info is above; fallback exception info is below.\n      [c] XrdCl::File::Open(name='root://cmsxrootd.fnal.gov//store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/DAA062BB-D1FA-E811-AC1B-A4BF01125348.root', flags=0x10, permissions=0660) => error '[ERROR] Operation expired' (errno=0, code=206). No additional data servers were found.\n      [d] Last URL tried: root://cms-xrd-global.cern.ch:1094//store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/DAA062BB-D1FA-E811-AC1B-A4BF01125348.root?tried=+1213cmsxrootd2.fnal.gov1213xrootd.unl.edu,cmsio5.rc.ufl.edu\n      [e] Problematic data server: cms-xrd-global.cern.ch:1094\n      [f] Disabled source: cms-xrd-global.cern.ch:1094\n", {'type': 'Fatal Exception', 'details': "An exception of category 'FallbackFileOpenError' occurred while\n   [0] Constructing the EventProcessor\n   [1] Constructing input source of type PoolSource\n   [2] Calling RootFileSequenceBase::initTheFile()\n   [3] Calling StorageFactory::open()\n   [4] Calling XrdFile::open()\nException Message:\nFailed to open the file 'root://cmsxrootd.fnal.gov//store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/DAA062BB-D1FA-E811-AC1B-A4BF01125348.root'\n   Additional Info:\n      [a] open() failed with system error 'No such file or directory' (error code 2)\n      [b] Input file /cms/store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/DAA062BB-D1FA-E811-AC1B-A4BF01125348.root could not be opened.\nFallback Input file root://cmsxrootd.fnal.gov//store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/DAA062BB-D1FA-E811-AC1B-A4BF01125348.root also could not be opened.\nOriginal exception info is above; fallback exception info is below.\n      [c] XrdCl::File::Open(name='root://cmsxrootd.fnal.gov//store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/DAA062BB-D1FA-E811-AC1B-A4BF01125348.root', flags=0x10, permissions=0660) => error '[ERROR] Operation expired' (errno=0, code=206). No additional data servers were found.\n      [d] Last URL tried: root://cms-xrd-global.cern.ch:1094//store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/DAA062BB-D1FA-E811-AC1B-A4BF01125348.root?tried=+1213cmsxrootd2.fnal.gov1213xrootd.unl.edu,cmsio5.rc.ufl.edu\n      [e] Problematic data server: cms-xrd-global.cern.ch:1094\n      [f] Disabled source: cms-xrd-global.cern.ch:1094", 'exitCode': '8028'}], 'TotalUserCpuTimeHistory': [2, 5, 4], 'SiteHistory': ['Unknown', 'T2_US_Caltech', 'Unknown', 'T2_US_MIT', 'Unknown', 'T2_US_Vanderbilt'], 'TotalSysCpuTimeHistory': [0, 1, 1]}, '3': {'Retries': 2, 'WallDurations': [111.0, 149.61269402503967, 9.0, 389.0, 466.0], 'StartTimes': [1557455503.0, 1557456164.0, 1557456771.0], 'SubmitTimes': [1557349844.0, 1557455683.0, 1557456684.0], 'JobIds': ['37091646.0', '37140262.0', '37140299.0'], 'TotalUserCpuTimeHistory': [2, 4, 5], 'EndTimes': [1557455614.0, 1557456553.0, 1557457237.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [287960, 314452, 315516], 'Error': [8028, "Error while running CMSSW:\nFatal Exception\nAn exception of category 'FallbackFileOpenError' occurred while\n   [0] Constructing the EventProcessor\n   [1] Constructing input source of type PoolSource\n   [2] Calling RootFileSequenceBase::initTheFile()\n   [3] Calling StorageFactory::open()\n   [4] Calling XrdFile::open()\nException Message:\nFailed to open the file 'root://cmsxrootd.fnal.gov//store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/187CC7BC-10FB-E811-BB12-0CC47A5FBE31.root'\n   Additional Info:\n      [a] open() failed with system error 'No such file or directory' (error code 2)\n      [b] Input file file:/mnt/hadoop/cms/store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/187CC7BC-10FB-E811-BB12-0CC47A5FBE31.root could not be opened.\nFallback Input file root://cmsxrootd.fnal.gov//store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/187CC7BC-10FB-E811-BB12-0CC47A5FBE31.root also could not be opened.\nOriginal exception info is above; fallback exception info is below.\n      [c] XrdCl::File::Open(name='root://cmsxrootd.fnal.gov//store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/187CC7BC-10FB-E811-BB12-0CC47A5FBE31.root', flags=0x10, permissions=0660) => error '[ERROR] Server responded with an error: [3011] No servers are available to read the file.\n' (errno=3011, code=400). No additional data servers were found.\n      [d] Last URL tried: root://cms-xrd-global.cern.ch:1094//store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/187CC7BC-10FB-E811-BB12-0CC47A5FBE31.root?tried=+1213cmsxrootd2.fnal.gov1213xrootd.unl.edu,cmsio5.rc.ufl.edu\n      [e] Problematic data server: cms-xrd-global.cern.ch:1094\n      [f] Disabled source: cms-xrd-global.cern.ch:1094\n", {'type': 'Fatal Exception', 'details': "An exception of category 'FallbackFileOpenError' occurred while\n   [0] Constructing the EventProcessor\n   [1] Constructing input source of type PoolSource\n   [2] Calling RootFileSequenceBase::initTheFile()\n   [3] Calling StorageFactory::open()\n   [4] Calling XrdFile::open()\nException Message:\nFailed to open the file 'root://cmsxrootd.fnal.gov//store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/187CC7BC-10FB-E811-BB12-0CC47A5FBE31.root'\n   Additional Info:\n      [a] open() failed with system error 'No such file or directory' (error code 2)\n      [b] Input file file:/mnt/hadoop/cms/store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/187CC7BC-10FB-E811-BB12-0CC47A5FBE31.root could not be opened.\nFallback Input file root://cmsxrootd.fnal.gov//store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/187CC7BC-10FB-E811-BB12-0CC47A5FBE31.root also could not be opened.\nOriginal exception info is above; fallback exception info is below.\n      [c] XrdCl::File::Open(name='root://cmsxrootd.fnal.gov//store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/187CC7BC-10FB-E811-BB12-0CC47A5FBE31.root', flags=0x10, permissions=0660) => error '[ERROR] Server responded with an error: [3011] No servers are available to read the file.\n' (errno=3011, code=400). No additional data servers were found.\n      [d] Last URL tried: root://cms-xrd-global.cern.ch:1094//store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/187CC7BC-10FB-E811-BB12-0CC47A5FBE31.root?tried=+1213cmsxrootd2.fnal.gov1213xrootd.unl.edu,cmsio5.rc.ufl.edu\n      [e] Problematic data server: cms-xrd-global.cern.ch:1094\n      [f] Disabled source: cms-xrd-global.cern.ch:1094", 'exitCode': '8028'}], 'SiteHistory': ['Unknown', 'T2_US_Nebraska', 'Unknown', 'T2_US_Vanderbilt', 'T2_US_MIT'], 'TotalSysCpuTimeHistory': [0, 1, 0]}, '2': {'Retries': 2, 'WallDurations': [111.0, 154.61269402503967, 219.0, 242.31688904762268, 64.0, 291.1736550331116], 'StartTimes': [1557455498.0, 1557456011.0, 1557456563.0], 'SubmitTimes': [1557349844.0, 1557455682.0, 1557456356.0], 'JobIds': ['37091645.0', '37140260.0', '37140290.0'], 'TotalUserCpuTimeHistory': [2, 7, 1], 'EndTimes': [1557455609.0, 1557456230.0, 1557456627.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [323720, 4376, 12768], 'Error': [8028, "Error while running CMSSW:\nFatal Exception\nAn exception of category 'FallbackFileOpenError' occurred while\n   [0] Constructing the EventProcessor\n   [1] Constructing input source of type PoolSource\n   [2] Calling RootFileSequenceBase::initTheFile()\n   [3] Calling StorageFactory::open()\n   [4] Calling XrdFile::open()\nException Message:\nFailed to open the file 'root://cmsxrootd.fnal.gov//store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/DAA062BB-D1FA-E811-AC1B-A4BF01125348.root'\n   Additional Info:\n      [a] open() failed with system error 'No such file or directory' (error code 2)\n      [b] Input file /cms/store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/DAA062BB-D1FA-E811-AC1B-A4BF01125348.root could not be opened.\nFallback Input file root://cmsxrootd.fnal.gov//store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/DAA062BB-D1FA-E811-AC1B-A4BF01125348.root also could not be opened.\nOriginal exception info is above; fallback exception info is below.\n      [c] XrdCl::File::Open(name='root://cmsxrootd.fnal.gov//store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/DAA062BB-D1FA-E811-AC1B-A4BF01125348.root', flags=0x10, permissions=0660) => error '[ERROR] Server responded with an error: [3011] No servers are available to read the file.\n' (errno=3011, code=400). No additional data servers were found.\n      [d] Last URL tried: root://cms-xrd-global.cern.ch:1094//store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/DAA062BB-D1FA-E811-AC1B-A4BF01125348.root?tried=+1213cmsxrootd2.fnal.gov1213xrootd.unl.edu,\n      [e] Problematic data server: cms-xrd-global.cern.ch:1094\n      [f] Disabled source: cms-xrd-global.cern.ch:1094\n", {'type': 'Fatal Exception', 'details': "An exception of category 'FallbackFileOpenError' occurred while\n   [0] Constructing the EventProcessor\n   [1] Constructing input source of type PoolSource\n   [2] Calling RootFileSequenceBase::initTheFile()\n   [3] Calling StorageFactory::open()\n   [4] Calling XrdFile::open()\nException Message:\nFailed to open the file 'root://cmsxrootd.fnal.gov//store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/DAA062BB-D1FA-E811-AC1B-A4BF01125348.root'\n   Additional Info:\n      [a] open() failed with system error 'No such file or directory' (error code 2)\n      [b] Input file /cms/store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/DAA062BB-D1FA-E811-AC1B-A4BF01125348.root could not be opened.\nFallback Input file root://cmsxrootd.fnal.gov//store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/DAA062BB-D1FA-E811-AC1B-A4BF01125348.root also could not be opened.\nOriginal exception info is above; fallback exception info is below.\n      [c] XrdCl::File::Open(name='root://cmsxrootd.fnal.gov//store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/DAA062BB-D1FA-E811-AC1B-A4BF01125348.root', flags=0x10, permissions=0660) => error '[ERROR] Server responded with an error: [3011] No servers are available to read the file.\n' (errno=3011, code=400). No additional data servers were found.\n      [d] Last URL tried: root://cms-xrd-global.cern.ch:1094//store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/DAA062BB-D1FA-E811-AC1B-A4BF01125348.root?tried=+1213cmsxrootd2.fnal.gov1213xrootd.unl.edu,\n      [e] Problematic data server: cms-xrd-global.cern.ch:1094\n      [f] Disabled source: cms-xrd-global.cern.ch:1094", 'exitCode': '8028'}], 'SiteHistory': ['Unknown', 'T2_US_Nebraska', 'Unknown', 'T2_US_Nebraska', 'Unknown', 'T2_US_Vanderbilt'], 'TotalSysCpuTimeHistory': [0, 1, 0]}, '5': {'Retries': 2, 'WallDurations': [110.0, 145.61269402503967, 62.0, 89.31688904762268, 91.0, 217.17365503311157], 'StartTimes': [1557455507.0, 1557456164.0, 1557456637.0], 'SubmitTimes': [1557349845.0, 1557455688.0, 1557456357.0], 'JobIds': ['37091649.0', '37140263.0', '37140291.0'], 'TotalUserCpuTimeHistory': [2, 3, 0], 'EndTimes': [1557455617.0, 1557456226.0, 1557456728.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [91004, 21260, 2984], 'Error': [8028, "Error while running CMSSW:\nFatal Exception\nAn exception of category 'FallbackFileOpenError' occurred while\n   [0] Constructing the EventProcessor\n   [1] Constructing input source of type PoolSource\n   [2] Calling RootFileSequenceBase::initTheFile()\n   [3] Calling StorageFactory::open()\n   [4] Calling XrdFile::open()\nException Message:\nFailed to open the file 'root://cmsxrootd.fnal.gov//store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/AA876F0E-06FB-E811-AC1F-000E1EB004E0.root'\n   Additional Info:\n      [a] open() failed with system error 'No such file or directory' (error code 2)\n      [b] Input file /cms/store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/AA876F0E-06FB-E811-AC1F-000E1EB004E0.root could not be opened.\nFallback Input file root://cmsxrootd.fnal.gov//store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/AA876F0E-06FB-E811-AC1F-000E1EB004E0.root also could not be opened.\nOriginal exception info is above; fallback exception info is below.\n      [c] XrdCl::File::Open(name='root://cmsxrootd.fnal.gov//store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/AA876F0E-06FB-E811-AC1F-000E1EB004E0.root', flags=0x10, permissions=0660) => error '[ERROR] Server responded with an error: [3011] No servers are available to read the file.\n' (errno=3011, code=400). No additional data servers were found.\n      [d] Last URL tried: root://cms-xrd-global.cern.ch:1094//store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/AA876F0E-06FB-E811-AC1F-000E1EB004E0.root?tried=+1213cmsxrootd2.fnal.gov1213xrootd.unl.edu,\n      [e] Problematic data server: cms-xrd-global.cern.ch:1094\n      [f] Disabled source: cms-xrd-global.cern.ch:1094\n", {'type': 'Fatal Exception', 'details': "An exception of category 'FallbackFileOpenError' occurred while\n   [0] Constructing the EventProcessor\n   [1] Constructing input source of type PoolSource\n   [2] Calling RootFileSequenceBase::initTheFile()\n   [3] Calling StorageFactory::open()\n   [4] Calling XrdFile::open()\nException Message:\nFailed to open the file 'root://cmsxrootd.fnal.gov//store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/AA876F0E-06FB-E811-AC1F-000E1EB004E0.root'\n   Additional Info:\n      [a] open() failed with system error 'No such file or directory' (error code 2)\n      [b] Input file /cms/store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/AA876F0E-06FB-E811-AC1F-000E1EB004E0.root could not be opened.\nFallback Input file root://cmsxrootd.fnal.gov//store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/AA876F0E-06FB-E811-AC1F-000E1EB004E0.root also could not be opened.\nOriginal exception info is above; fallback exception info is below.\n      [c] XrdCl::File::Open(name='root://cmsxrootd.fnal.gov//store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/AA876F0E-06FB-E811-AC1F-000E1EB004E0.root', flags=0x10, permissions=0660) => error '[ERROR] Server responded with an error: [3011] No servers are available to read the file.\n' (errno=3011, code=400). No additional data servers were found.\n      [d] Last URL tried: root://cms-xrd-global.cern.ch:1094//store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/AA876F0E-06FB-E811-AC1F-000E1EB004E0.root?tried=+1213cmsxrootd2.fnal.gov1213xrootd.unl.edu,\n      [e] Problematic data server: cms-xrd-global.cern.ch:1094\n      [f] Disabled source: cms-xrd-global.cern.ch:1094", 'exitCode': '8028'}], 'SiteHistory': ['Unknown', 'T2_US_Nebraska', 'Unknown', 'T2_US_Vanderbilt', 'Unknown', 'T2_US_Vanderbilt'], 'TotalSysCpuTimeHistory': [0, 0, 0]}, '4': {'Retries': 2, 'WallDurations': [10.0, 480.0, 609.0, 270.0], 'StartTimes': [1557455511.0, 1557456156.0, 1557457136.0], 'SubmitTimes': [1557349845.0, 1557456061.0, 1557456897.0], 'JobIds': ['37091648.0', '37140277.0', '37140338.0'], 'TotalUserCpuTimeHistory': [7, 4, 4], 'EndTimes': [1557455991.0, 1557456765.0, 1557457406.0], 'Restarts': 0, 'RecordedSite': True, 'State': 'failed', 'ResidentSetSize': [225360, 316348, 16328], 'Error': [8028, "Error while running CMSSW:\nFatal Exception\nAn exception of category 'FallbackFileOpenError' occurred while\n   [0] Constructing the EventProcessor\n   [1] Constructing input source of type PoolSource\n   [2] Calling RootFileSequenceBase::initTheFile()\n   [3] Calling StorageFactory::open()\n   [4] Calling XrdFile::open()\nException Message:\nFailed to open the file 'root://cmsxrootd.fnal.gov//store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/2E714AD7-17FB-E811-949D-34E6D7BDDEE8.root'\n   Additional Info:\n      [a] open() failed with system error 'No such file or directory' (error code 2)\n      [b] Input file /cms/store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/2E714AD7-17FB-E811-949D-34E6D7BDDEE8.root could not be opened.\nFallback Input file root://cmsxrootd.fnal.gov//store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/2E714AD7-17FB-E811-949D-34E6D7BDDEE8.root also could not be opened.\nOriginal exception info is above; fallback exception info is below.\n      [c] XrdCl::File::Open(name='root://cmsxrootd.fnal.gov//store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/2E714AD7-17FB-E811-949D-34E6D7BDDEE8.root', flags=0x10, permissions=0660) => error '[ERROR] Server responded with an error: [3011] No servers are available to read the file.\n' (errno=3011, code=400). No additional data servers were found.\n      [d] Last URL tried: root://cms-xrd-global.cern.ch:1094//store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/2E714AD7-17FB-E811-949D-34E6D7BDDEE8.root?tried=+1213cmsxrootd2.fnal.gov1213xrootd.unl.edu,cmsio5.rc.ufl.edu\n      [e] Problematic data server: cms-xrd-global.cern.ch:1094\n      [f] Disabled source: cms-xrd-global.cern.ch:1094\n", {'type': 'Fatal Exception', 'details': "An exception of category 'FallbackFileOpenError' occurred while\n   [0] Constructing the EventProcessor\n   [1] Constructing input source of type PoolSource\n   [2] Calling RootFileSequenceBase::initTheFile()\n   [3] Calling StorageFactory::open()\n   [4] Calling XrdFile::open()\nException Message:\nFailed to open the file 'root://cmsxrootd.fnal.gov//store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/2E714AD7-17FB-E811-949D-34E6D7BDDEE8.root'\n   Additional Info:\n      [a] open() failed with system error 'No such file or directory' (error code 2)\n      [b] Input file /cms/store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/2E714AD7-17FB-E811-949D-34E6D7BDDEE8.root could not be opened.\nFallback Input file root://cmsxrootd.fnal.gov//store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/2E714AD7-17FB-E811-949D-34E6D7BDDEE8.root also could not be opened.\nOriginal exception info is above; fallback exception info is below.\n      [c] XrdCl::File::Open(name='root://cmsxrootd.fnal.gov//store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/2E714AD7-17FB-E811-949D-34E6D7BDDEE8.root', flags=0x10, permissions=0660) => error '[ERROR] Server responded with an error: [3011] No servers are available to read the file.\n' (errno=3011, code=400). No additional data servers were found.\n      [d] Last URL tried: root://cms-xrd-global.cern.ch:1094//store/mc/RunIIFall17DRPremix/DarkPhotonToMuMu_M70_madgraph_pythia8_TuneCP5/AODSIM/PU2017_94X_mc2017_realistic_v11-v1/00000/2E714AD7-17FB-E811-949D-34E6D7BDDEE8.root?tried=+1213cmsxrootd2.fnal.gov1213xrootd.unl.edu,cmsio5.rc.ufl.edu\n      [e] Problematic data server: cms-xrd-global.cern.ch:1094\n      [f] Disabled source: cms-xrd-global.cern.ch:1094", 'exitCode': '8028'}], 'SiteHistory': ['Unknown', 'T2_US_Nebraska', 'T2_US_MIT', 'T2_US_Vanderbilt'], 'TotalSysCpuTimeHistory': [1, 0, 1]}}
+INFO 2019-05-12 19:01:40,708: 	 Status on the scheduler:	FAILED
+INFO 2019-05-12 19:01:40,708: 	 
+Jobs status:                    failed       		100.0% (5/5)
+INFO 2019-05-12 19:01:40,708: 	 
+No publication information (publication has been disabled in the CRAB configuration file)
+INFO 2019-05-12 19:01:40,708: 	 
+Error Summary: (use crab status --verboseErrors for details about the errors)
+
+5 jobs failed with exit code 8028
+
+Have a look at https://twiki.cern.ch/twiki/bin/viewauth/CMSPublic/JobExitCodes for a description of the exit codes.
+INFO 2019-05-12 19:01:40,708: 	 
+Warning: the max jobs runtime is less than 30% of the task requested value (1250 min), please consider to request a lower value for failed jobs (allowed through crab resubmit) and/or improve the jobs splitting (e.g. config.Data.splitting = 'Automatic') in a new task.
+INFO 2019-05-12 19:01:40,708: 	 
+Warning: the average jobs CPU efficiency is less than 50%, please consider to improve the jobs splitting (e.g. config.Data.splitting = 'Automatic') in a new task
+INFO 2019-05-12 19:01:40,708: 	 
+Summary of run jobs:
+ * Memory: 12MB min, 308MB max, 129MB ave
+ * Runtime: 0:03:37 min, 0:07:46 max, 0:05:25 ave
+ * CPU eff: 0% min, 2% max, 1% ave
+ * Waste: 0:57:16 (68% of total)
+
+DEBUG 2019-05-12 19:01:40,724: 	 Requesting resubmission of failed jobs in task 190508_210705:schhibra_crab_20190508_230656
+INFO 2019-05-12 19:01:40,724: 	 Sending resubmit request to the server.
+DEBUG 2019-05-12 19:01:40,724: 	 Submitting {'publication': 0, 'jobids': ['1', '3', '2', '5', '4'], 'subresource': 'resubmit2', 'workflow': u'190508_210705:schhibra_crab_20190508_230656'} 
+DEBUG 2019-05-12 19:01:40,724: 	 Encoded resubmit request: publication=0&subresource=resubmit2&workflow=190508_210705%3Aschhibra_crab_20190508_230656&jobids=1&jobids=3&jobids=2&jobids=5&jobids=4
+DEBUG 2019-05-12 19:01:40,917: 	 Result: {u'result': [{u'result': u'ok'}], u'desc': {u'columns': [u'tm_site_blacklist', u'tm_site_whitelist', u'tm_maxjobruntime', u'tm_maxmemory', u'tm_numcores', u'tm_priority']}}
+INFO 2019-05-12 19:01:40,918: 	 Resubmit request sent to the server.
+INFO 2019-05-12 19:01:40,918: 	 Please use 'crab status' to check how the resubmission process proceeds.
+Notice it may take a couple of minutes for the resubmission to get fully processed.
+INFO 2019-05-12 19:01:40,922: 	 Log file is /afs/cern.ch/work/s/schhibra/DarkPhotonSearch_v2/CMSSW_9_4_14/src/ScoutingAnalysis/TreeMaker/crab/ZdScoutingM70_L1_12_5_L1_15_7_Official_AccXEff/crab_20190508_230656/crab.log

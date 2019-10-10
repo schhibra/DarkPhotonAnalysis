@@ -1,0 +1,32 @@
+Combination of CatB=card_m11.8329_catB_bern_forFit.txt  CatO=card_m11.8329_catO_bern_forFit.txt
+imax 2 number of bins
+jmax 2 number of processes minus 1
+kmax 10 number of nuisance parameters
+----------------------------------------------------------------------------------------------------------------------------------
+shapes bkg       CatB      card_m11.8329_catB_workspace_bern.root w:bkg_mass_catB_pdf
+shapes data_obs  CatB      card_m11.8329_catB_workspace_bern.root w:data_obs
+shapes dp17      CatB      card_m11.8329_catB_workspace_bern.root w:sig_mass_dp17_catB_pdf
+shapes dp18      CatB      card_m11.8329_catB_workspace_bern.root w:sig_mass_dp18_catB_pdf
+shapes bkg       CatO      card_m11.8329_catO_workspace_bern.root w:bkg_mass_catO_pdf
+shapes data_obs  CatO      card_m11.8329_catO_workspace_bern.root w:data_obs
+shapes dp17      CatO      card_m11.8329_catO_workspace_bern.root w:sig_mass_dp17_catO_pdf
+shapes dp18      CatO      card_m11.8329_catO_workspace_bern.root w:sig_mass_dp18_catO_pdf
+----------------------------------------------------------------------------------------------------------------------------------
+bin          CatB     CatO   
+observation  -1       -1     
+----------------------------------------------------------------------------------------------------------------------------------
+bin                                CatB     CatB     CatB     CatO     CatO     CatO   
+process                            dp18     dp17     bkg      dp18     dp17     bkg    
+process                            -1       0        1        -1       0        1      
+rate                               1        1        1        1        1        1      
+----------------------------------------------------------------------------------------------------------------------------------
+CMS_eff_mm_sel          lnN        1.03     1.03     -        1.015    1.015    -      
+CMS_eff_mm_trig         lnN        1.10658  1.12361  -        1.10658  1.12361  -      
+QCDscale                lnN        1.1      1.1      -        1.1      1.1      -      
+lumi_13TeV              lnN        1.026    1.026    -        1.026    1.026    -      
+pdf_gg                  lnN        1.1      1.1      -        1.1      1.1      -      
+CMS_dp_scale17O  param  0 0.000756127
+CMS_dp_scale17B  param  0 0.000625256
+CMS_dp_scale18B  param  0 0.000614515
+CMS_dp_scale18O  param  0 0.000746547
+CMS_dp_res    param  0 0.1

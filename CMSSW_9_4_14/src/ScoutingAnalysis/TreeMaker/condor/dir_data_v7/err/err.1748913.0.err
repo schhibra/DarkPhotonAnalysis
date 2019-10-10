@@ -1,0 +1,4 @@
+SysError in <TFile::ReadBuffer>: error reading from file /eos/cms/store/group/phys_exotica/darkPhoton/schhibra/ScoutingNTuples2017/ScoutingCaloMuon/crab_20190513_192459/190513_172507/0000/tree_scout_93.root (Input/output error)
+Error in <TKey::ReadFile>: Failed to read data.
+Error in <TChain::LoadTree>: Cannot find tree with name mmtree/tree in file file:///eos/cms/store/group/phys_exotica/darkPhoton/schhibra/ScoutingNTuples2017/ScoutingCaloMuon/crab_20190513_192459/190513_172507/0000/tree_scout_93.root
+SysError in <TFile::WriteBuffer>: error writing to file /eos/cms/store/group/phys_exotica/darkPhoton/schhibra/ScoutingNTuples2017/jobs_data_v7/histos/trim_20190513_192459_scout_9.root (-1) (Input/output error)

@@ -1,0 +1,26 @@
+imax *                                                                                                                        
+jmax *                                                                                                                        
+kmax *                                                                                                                        
+------------                                                                                                                  
+shapes dp17     catO     card_m28.4034_catO_workspace_bern.root     w:sig_mass_dp17_catO_pdf     
+shapes dp18     catO     card_m28.4034_catO_workspace_bern.root     w:sig_mass_dp18_catO_pdf     
+shapes bkg      catO     card_m28.4034_catO_workspace_bern.root     w:bkg_mass_catO_pdf     
+shapes data_obs catO     card_m28.4034_catO_workspace_bern.root     w:data_obs                
+------------                                                                                                                  
+bin             catO
+observation        -1                                                                                                         
+------------                                                                                                                  
+bin                                    catO    catO    catO
+process                                dp17       dp18       bkg         
+process                                -1         0          1           
+rate                                    1         1          1           
+------------
+## Dark photon mass : 28.4034
+lumi_13TeV                lnN        1.026          1.026          -           
+QCDscale                  lnN        1.10           1.10           -           
+pdf_gg                    lnN        1.10           1.10           -           
+CMS_eff_mm_sel            lnN        1.015          1.015          -           
+CMS_eff_mm_trig           lnN        1.01978         1.05597            -           
+CMS_dp_scale17O           param      0              0.000938608
+CMS_dp_scale18O           param      0              0.000862118
+CMS_dp_res                param      0              0.1           

@@ -1,0 +1,7 @@
+
+/bin/rm -f lib/slc6_amd64_gcc630/libRecoAnalysisTreeMaker.so
+/bin/rm -f lib/slc6_amd64_gcc630/pluginRecoAnalysisTreeMakerAuto.so lib/slc6_amd64_gcc630/RecoAnalysisTreeMakerAuto.edmplugin
+/bin/rm -f src/RecoAnalysis/TreeMaker/python/__init__.py src/RecoAnalysis/TreeMaker/python/__init__.pyc
+/bin/rm -rf tmp/slc6_amd64_gcc630/edmplugins/poison/RecoAnalysis/TreeMaker
+/bin/touch tmp/common/cache/packs/changed
+edmPluginRefresh lib/slc6_amd64_gcc630
