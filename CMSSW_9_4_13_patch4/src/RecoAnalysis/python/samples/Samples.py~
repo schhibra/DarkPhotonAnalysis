@@ -1,0 +1,13 @@
+samples = {}
+
+from RecoAnalysis.TreeMaker.samples.SM          import AddSMSamples
+from RecoAnalysis.TreeMaker.samples.DM          import AddDMSamples
+from RecoAnalysis.TreeMaker.samples.DY          import AddDYSamples
+from RecoAnalysis.TreeMaker.samples.TT          import AddTTSamples
+from RecoAnalysis.TreeMaker.samples.DP_Official import AddDP_OfficialSamples
+
+AddSMSamples(samples)
+AddDMSamples(samples)
+AddDYSamples(samples)
+AddTTSamples(samples)
+AddDP_OfficialSamples(samples)

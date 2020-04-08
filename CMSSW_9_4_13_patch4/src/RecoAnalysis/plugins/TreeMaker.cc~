@@ -1,0 +1,702 @@
+// -*- C++ -*-
+//
+// Package:    RecoAnalysis/TreeMaker
+// Class:      TreeMaker
+// 
+/**\class TreeMaker TreeMaker.cc RecoAnalysis/TreeMaker/plugins/TreeMaker.cc
+
+ Description: [one line class summary]
+
+ Implementation:
+     [Notes on implementation]
+*/
+//
+// Original Author:  Simranjit Singh Chhibra
+//         Created:  Thu, 16 May 2019 10:33:23 GMT
+//
+//
+
+
+// system include files
+#include <memory>
+
+// user include files
+#include "FWCore/Framework/interface/Frameworkfwd.h"
+#include "FWCore/Framework/interface/one/EDAnalyzer.h"
+
+#include "FWCore/Framework/interface/Event.h"
+#include "FWCore/Framework/interface/MakerMacros.h"
+
+#include "FWCore/ParameterSet/interface/ParameterSet.h"
+#include "FWCore/ServiceRegistry/interface/Service.h"
+
+// ROOT includes
+#include <TTree.h>
+#include <TLorentzVector.h>
+#include <TPRegexp.h>
+
+// Other relevant CMSSW includes
+#include "CommonTools/UtilAlgos/interface/TFileService.h" 
+#include "HLTrigger/HLTcore/interface/HLTConfigProvider.h"
+
+#include "FWCore/Common/interface/TriggerNames.h"
+#include "DataFormats/Common/interface/TriggerResults.h"
+#include "DataFormats/PatCandidates/interface/TriggerObjectStandAlone.h"
+
+#include "DataFormats/Candidate/interface/ShallowCloneCandidate.h"
+
+#include "DataFormats/PatCandidates/interface/Muon.h"
+#include "DataFormats/PatCandidates/interface/Jet.h"
+#include "DataFormats/VertexReco/interface/Vertex.h"
+#include "SimDataFormats/PileupSummaryInfo/interface/PileupSummaryInfo.h"
+#include "SimDataFormats/GeneratorProducts/interface/GenEventInfoProduct.h"
+
+#include "RecoAnalysis/TreeMaker/src/RoccoR.cc"
+#include "CLHEP/Random/RandFlat.h"
+#include "FWCore/Utilities/interface/RandomNumberGenerator.h"
+#include "FWCore/Utilities/interface/StreamID.h"
+
+#include "DataFormats/Math/interface/deltaR.h"
+
+#include "CommonTools/CandUtils/interface/AddFourMomenta.h"
+#include "RecoAnalysis/TreeMaker/interface/CompositeCandMassResolution.h"
+
+#include "SimDataFormats/GeneratorProducts/interface/LHERunInfoProduct.h"
+#include "SimDataFormats/GeneratorProducts/interface/LHEEventProduct.h"
+//
+// class declaration
+//
+
+// If the analyzer does not use TFileService, please remove
+// the template argument to the base class so the class inherits
+// from  edm::one::EDAnalyzer<> and also remove the line from
+// constructor "usesResource("TFileService");"
+// This will improve performance in multithreaded jobs.
+
+class TreeMaker : public edm::one::EDAnalyzer<edm::one::SharedResources, edm::one::WatchRuns, edm::one::WatchLuminosityBlocks>  {
+public:
+  explicit TreeMaker(const edm::ParameterSet&);
+  ~TreeMaker();
+  
+  static void fillDescriptions(edm::ConfigurationDescriptions& descriptions);
+  
+  
+private:
+  virtual void beginJob() override;
+  virtual void analyze(const edm::Event&, const edm::EventSetup&) override;
+  virtual void endJob() override;
+  
+  virtual void beginRun(edm::Run const&, edm::EventSetup const&) override;
+  virtual void endRun(edm::Run const&, edm::EventSetup const&) override;
+  
+  virtual void beginLuminosityBlock(edm::LuminosityBlock const&, edm::EventSetup const&) override;
+  virtual void endLuminosityBlock(edm::LuminosityBlock const&, edm::EventSetup const&) override;
+  
+  char getJetID(const pat::JetRef&);
+  bool isMediumMuon(const pat::MuonRef&);
+
+  //to be stored in ntuples
+  int      run;
+  int      lumSec;  
+  int      eventNo;
+  double   wgt;
+  unsigned putrue;
+
+  unsigned char hltsinglemu;
+  unsigned char hltdoublemu;
+
+  std::vector<char>            mid;
+  std::vector<double>          mdB;
+  std::vector<double>          mdz;
+  std::vector<double>          miso;
+  std::vector<double>          miso_ch;
+  std::vector<double>          miso_neu;
+  std::vector<double>          miso_ph;
+  
+  std::vector<unsigned char>   m1idx;
+  std::vector<unsigned char>   m2idx;
+  std::vector<double>          masserr;
+  
+  std::vector<float>           SF;
+  std::vector<float>           SFErr;
+
+  std::vector<double>          jbtagcsv;
+  std::vector<double>          jbtagdcsv;
+  std::vector<char>            jid;
+
+  std::vector<TLorentzVector>  muon4s;
+  std::vector<TLorentzVector>  jet4s; 
+  std::vector<TLorentzVector>  gens;
+
+  std::vector<double>          qcdscale;
+  std::vector<double>          pdfunc;
+
+  //input tags and tokens
+  const edm::InputTag triggerResultsTag;
+  
+  const edm::EDGetTokenT<edm::TriggerResults>                    triggerResultsToken;
+  const edm::EDGetTokenT<pat::TriggerObjectStandAloneCollection> triggerObjectsToken;
+  
+  const edm::EDGetTokenT<std::vector<reco::Vertex> >             verticesToken;
+  const edm::EDGetTokenT<std::vector<pat::Muon> >                muonsToken;
+  const edm::EDGetTokenT<std::vector<pat::Jet> >                 jetsToken;
+  
+  const edm::EDGetTokenT<std::vector<PileupSummaryInfo> >        pileupInfoToken;
+  const edm::EDGetTokenT<GenEventInfoProduct>                    genEvtInfoToken;
+  const edm::EDGetTokenT<std::vector<reco::GenParticle> >        gensToken;
+
+  const edm::EDGetTokenT<LHERunInfoProduct>                      lheRunInfoToken;
+  const edm::EDGetTokenT<LHEEventProduct>                        lheInfoToken;
+
+  RoccoR rc;
+
+  //input bools  
+  bool isMC;
+  bool useLHEWeights;
+  bool applyHLTFilter;	
+  bool applyDimuonFilter;	
+  bool useMediumID2016;    
+  bool RochesterCorr;       
+
+  //hlt info
+  std::vector<std::string>   triggerPathsVector;
+  std::map<std::string, int> triggerPathsMap;
+
+  // TTree carrying the event weight information
+  TTree* tree;
+
+
+  // Sorters to order object collections in decreasing order of pT
+  template<typename T> 
+  class PatPtSorter {
+  public:
+    bool operator()(const T& i, const T& j) const {
+      return (i->pt() > j->pt());
+    }
+  };
+  
+  PatPtSorter<pat::MuonRef> muonSorter;
+  PatPtSorter<pat::JetRef>  jetSorter;
+  
+  // ----------member data ---------------------------
+};
+
+//
+// constants, enums and typedefs
+//
+
+//
+// static data member definitions
+//
+
+//
+// constructors and destructor
+//
+TreeMaker::TreeMaker(const edm::ParameterSet& iConfig):
+    triggerResultsTag        (iConfig.getParameter<edm::InputTag>("triggerresults")),
+    triggerResultsToken      (consumes<edm::TriggerResults>                    (triggerResultsTag)),
+    triggerObjectsToken      (consumes<pat::TriggerObjectStandAloneCollection> (iConfig.getParameter<edm::InputTag>("triggerobjects"))),
+    verticesToken            (consumes<std::vector<reco::Vertex> >             (iConfig.getParameter<edm::InputTag>("vertices"      ))),
+    muonsToken               (consumes<std::vector<pat::Muon> >                (iConfig.getParameter<edm::InputTag>("muons"         ))), 
+    jetsToken                (consumes<std::vector<pat::Jet> >                 (iConfig.getParameter<edm::InputTag>("jets"          ))),
+    pileupInfoToken          (consumes<std::vector<PileupSummaryInfo> >        (iConfig.getParameter<edm::InputTag>("pileupinfo"    ))),
+    genEvtInfoToken          (consumes<GenEventInfoProduct>                    (iConfig.getParameter<edm::InputTag>("geneventinfo"  ))),
+    gensToken                (consumes<std::vector<reco::GenParticle> >        (iConfig.getParameter<edm::InputTag>("gens"          ))),
+
+    lheRunInfoToken          (consumes<LHERunInfoProduct,edm::InRun>           (edm::InputTag("externalLHEProducer",""))),
+    lheInfoToken             (consumes<LHEEventProduct>                        (iConfig.getParameter<edm::InputTag>("lheInfo"))),
+
+    rc                       (iConfig.existsAs<std::string>("data")        ?    iConfig.getParameter<std::string>("data")         : "../data/Rochester/RoccoR2016.txt"),
+
+    isMC                     (iConfig.existsAs<bool>("isMC")               ?    iConfig.getParameter<bool>  ("isMC")              : false),
+    useLHEWeights            (iConfig.existsAs<bool>("useLHEWeights")      ?    iConfig.getParameter<bool>  ("useLHEWeights")     : false),
+    applyHLTFilter           (iConfig.existsAs<bool>("applyHLTFilter")     ?    iConfig.getParameter<bool>  ("applyHLTFilter")    : false),
+    applyDimuonFilter        (iConfig.existsAs<bool>("applyDimuonFilter")  ?    iConfig.getParameter<bool>  ("applyDimuonFilter") : false),
+    useMediumID2016          (iConfig.existsAs<bool>("useMediumID2016")    ?    iConfig.getParameter<bool>  ("useMediumID2016")   : false),
+    RochesterCorr            (iConfig.existsAs<bool>("RochesterCorr")      ?    iConfig.getParameter<bool>  ("RochesterCorr")     : false)
+{
+   //now do what ever initialization is needed
+   usesResource("TFileService");
+
+}
+
+
+TreeMaker::~TreeMaker()
+{
+ 
+   // do anything here that needs to be done at desctruction time
+   // (e.g. close files, deallocate resources etc.)
+
+}
+
+
+//
+// member functions
+//
+
+// ------------ method called for each event  ------------
+void
+TreeMaker::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
+{
+  using namespace edm;
+  using namespace std;
+  using namespace reco;
+  
+  //////// Handles to the EDM content ////////////////////////
+  Handle<edm::TriggerResults> triggerResultsH;
+  iEvent.getByToken(triggerResultsToken, triggerResultsH);
+  
+  Handle<pat::TriggerObjectStandAloneCollection> triggerObjectsH;
+  iEvent.getByToken(triggerObjectsToken, triggerObjectsH);
+  
+  Handle<vector<Vertex> > verticesH;
+  iEvent.getByToken(verticesToken, verticesH);
+  
+  Handle<vector<pat::Muon> > muonsH;
+  iEvent.getByToken(muonsToken, muonsH);
+  
+  Handle<vector<pat::Jet> > jetsH;
+  iEvent.getByToken(jetsToken, jetsH);
+
+  Handle<vector<PileupSummaryInfo> > pileupInfoH;
+  if (isMC) iEvent.getByToken(pileupInfoToken, pileupInfoH);
+  
+  Handle<GenEventInfoProduct> genEvtInfoH;
+  if (isMC && useLHEWeights) iEvent.getByToken(genEvtInfoToken, genEvtInfoH);
+  
+  Handle<vector<GenParticle> > gensH;
+  if (isMC) iEvent.getByToken(gensToken, gensH);
+
+  Handle<LHEEventProduct> lheInfoH;
+  if (isMC && useLHEWeights) iEvent.getByToken(lheInfoToken, lheInfoH);
+  ////////////////////////////////////////////////////////////
+  
+  // Random number generator /////////////////////////////////
+  edm::Service<edm::RandomNumberGenerator> rng;
+  CLHEP::HepRandomEngine& engine = rng->getEngine(iEvent.streamID());
+  ////////////////////////////////////////////////////////////
+  
+  // Event info //////////////////////////////////////////////
+  run     = iEvent.eventAuxiliary().run();
+  lumSec  = iEvent.eventAuxiliary().luminosityBlock(); 
+  eventNo = iEvent.id().event();  
+  
+  wgt = 1.;
+  if (isMC && useLHEWeights && genEvtInfoH.isValid()) wgt = genEvtInfoH->weight(); 
+
+  qcdscale.clear(); 
+  pdfunc.clear(); 
+  if (isMC && useLHEWeights && lheInfoH.isValid()) {
+
+    for(int i = 0; i < 9; i++) {
+      qcdscale.push_back(lheInfoH->weights()[i].wgt); 
+    }
+    for(int i = 9; i < 112; i++) {
+      pdfunc.push_back(lheInfoH->weights()[i].wgt);
+    }
+  }
+  ////////////////////////////////////////////////////////////
+
+  // Trigger info ////////////////////////////////////////////
+  hltsinglemu = 0;
+  hltdoublemu = 0;
+  
+  for (size_t i = 0; i < triggerPathsVector.size(); i++) {
+    if (triggerPathsMap[triggerPathsVector[i]] == -1) continue;
+    if (i == 0  && triggerResultsH->accept(triggerPathsMap[triggerPathsVector[i]])) hltsinglemu    +=  1; // HLT_IsoMu24_v
+    if (i == 1  && triggerResultsH->accept(triggerPathsMap[triggerPathsVector[i]])) hltsinglemu    +=  2; // HLT_IsoTkMu24_v
+    if (i == 2  && triggerResultsH->accept(triggerPathsMap[triggerPathsVector[i]])) hltdoublemu    +=  1; // HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_v
+    if (i == 3  && triggerResultsH->accept(triggerPathsMap[triggerPathsVector[i]])) hltdoublemu    +=  2; // HLT_Mu17_TrkIsoVVL_TkMu8_TrkIsoVVL_v
+    if (i == 4  && triggerResultsH->accept(triggerPathsMap[triggerPathsVector[i]])) hltdoublemu    +=  4; // HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_DZ_v
+    if (i == 5  && triggerResultsH->accept(triggerPathsMap[triggerPathsVector[i]])) hltdoublemu    +=  8; // HLT_Mu17_TrkIsoVVL_TkMu8_TrkIsoVVL_DZ_v
+  }
+  ////////////////////////////////////////////////////////////
+
+  // return if trigger is not fired in this event //////////// 
+  if (applyHLTFilter && hltsinglemu == 0 && hltdoublemu == 0) return;
+  ////////////////////////////////////////////////////////////
+
+  // Pileup Info /////////////////////////////////////////////
+  putrue = 0;
+  if (isMC && pileupInfoH.isValid()) {
+    for (auto pileupInfo_iter = pileupInfoH->begin(); pileupInfo_iter != pileupInfoH->end(); ++pileupInfo_iter) {
+      if (pileupInfo_iter->getBunchCrossing() == 0) putrue = pileupInfo_iter->getTrueNumInteractions();
+    }
+  }
+  ////////////////////////////////////////////////////////////
+
+  // Vertex Info /////////////////////////////////////////////
+  if(verticesH->size() < 1) return; //if we do not check this, the use of vertex for dz, dxy, IP and IPError may give segment violation
+  ////////////////////////////////////////////////////////////
+  
+
+  // Muon info ///////////////////////////////////////////////
+  muon4s.clear(); 
+
+  mdB.clear(); 
+  mdz.clear(); 
+  mid.clear(); 
+
+  miso.clear(); 
+  miso_ch.clear(); 
+  miso_neu.clear(); 
+  miso_ph.clear();
+
+  m1idx.clear(); 
+  m2idx.clear(); 
+  masserr.clear(); 
+
+  SF.clear();
+  SFErr.clear();
+
+  vector<pat::MuonRef> muonv;
+  for (auto muons_iter = muonsH->begin(); muons_iter != muonsH->end(); ++muons_iter) {
+    if (muons_iter->pt() < 10.0) continue;//simran
+    if (fabs(muons_iter->eta()) > 2.4) continue;
+    
+    double muonisoval = 0.0;
+    muonisoval  = muons_iter->pfIsolationR04().sumChargedHadronPt;
+    muonisoval += max(0., muons_iter->pfIsolationR04().sumNeutralHadronEt + muons_iter->pfIsolationR04().sumPhotonEt - 0.5*muons_iter->pfIsolationR04().sumPUPt);
+    muonisoval /= muons_iter->pt();    
+    if (muonisoval > 0.4) continue;
+    
+    pat::MuonRef mref(muonsH, muons_iter - muonsH->begin());
+    muonv.push_back(mref);
+  }
+  
+  // return if no two muons pass ID + iso ////////////////////
+  if(applyDimuonFilter && muonv.size() < 2) return;
+  ////////////////////////////////////////////////////////////
+  else sort(muonv.begin(), muonv.end(), muonSorter);
+  
+  for (size_t i = 0; i < muonv.size(); i++) {
+    TLorentzVector muon4;
+    muon4.SetPtEtaPhiM(muonv[i]->pt(), muonv[i]->eta(), muonv[i]->phi(), 0.1057);
+    muon4s.push_back(muon4);
+    
+    // Muon isolation
+    double muonisoval = 0.0;
+    muonisoval  = muonv[i]->pfIsolationR04().sumChargedHadronPt;
+    muonisoval += max(0., muonv[i]->pfIsolationR04().sumNeutralHadronEt + muonv[i]->pfIsolationR04().sumPhotonEt - 0.5*muonv[i]->pfIsolationR04().sumPUPt);
+    muonisoval /= muonv[i]->pt();
+    miso.push_back(muonisoval);
+    
+    miso_ch.push_back (muonv[i]->pfIsolationR04().sumChargedHadronPt);
+    miso_neu.push_back(muonv[i]->pfIsolationR04().sumNeutralHadronEt);
+    miso_ph.push_back (muonv[i]->pfIsolationR04().sumPhotonEt       );
+    
+    // Muon ID
+    const reco::Vertex & vertex = verticesH->at(0);
+
+    mdB.push_back(muonv[i]->dB());
+    mdz.push_back(muonv[i]->muonBestTrack()->dz(vertex.position()));
+    
+    char midval = 1;
+    if (muonv[i]->isLooseMuon())                               midval += 2;
+    if (muonv[i]->isMediumMuon() && !useMediumID2016)          midval += 4;
+    if (isMediumMuon(muonv[i])   &&  useMediumID2016)          midval += 4;
+    if (muonv[i]->isTightMuon (verticesH->at(0)))              midval += 8;
+    
+    // Muon HLT matching
+    bool hlt1mmatch = false;
+    bool hlt2mmatch = false;
+    const edm::TriggerNames& trigNames = iEvent.triggerNames(*triggerResultsH);
+    for (pat::TriggerObjectStandAlone trgobj : *triggerObjectsH) {
+      trgobj.unpackPathNames(trigNames);
+      if (not (deltaR(trgobj.eta(), trgobj.phi(), muonv[i]->eta(), muonv[i]->phi()) < 0.1)) continue;
+      if (trgobj.hasPathName("HLT_IsoMu24_v*"                          , true, false) or trgobj.hasPathName("HLT_IsoMu24_v*"                          , true, true)) hlt1mmatch = true;
+      if (trgobj.hasPathName("HLT_IsoTkMu24_v*"                        , true, false) or trgobj.hasPathName("HLT_IsoTkMu24_v*"                        , true, true)) hlt1mmatch = true;
+      if (trgobj.hasPathName("HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_v*"     , true, false) or trgobj.hasPathName("HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_v*"     , true, true)) hlt2mmatch = true;
+      if (trgobj.hasPathName("HLT_Mu17_TrkIsoVVL_TkMu8_TrkIsoVVL_v*"   , true, false) or trgobj.hasPathName("HLT_Mu17_TrkIsoVVL_TkMu8_TrkIsoVVL_v*"   , true, true)) hlt2mmatch = true;
+      if (trgobj.hasPathName("HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_DZ_v*"  , true, false) or trgobj.hasPathName("HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_DZ_v*"  , true, true)) hlt2mmatch = true;
+      if (trgobj.hasPathName("HLT_Mu17_TrkIsoVVL_TkMu8_TrkIsoVVL_DZ_v*", true, false) or trgobj.hasPathName("HLT_Mu17_TrkIsoVVL_TkMu8_TrkIsoVVL_DZ_v*", true, true)) hlt2mmatch = true;
+    }
+    if (hlt1mmatch) midval += 16;
+    if (hlt2mmatch) midval += 32;
+    
+    midval *= muonv[i]->pdgId() / abs(muonv[i]->pdgId());
+    mid.push_back(midval);
+
+    //Rochester corrections
+    double genpt = -1.0;
+    double minDR =  1.0;
+    if (isMC && gensH.isValid()) {
+      for (auto gens_iter = gensH->begin(); gens_iter != gensH->end(); ++gens_iter) { 
+	if (!gens_iter->fromHardProcessFinalState() || abs(gens_iter->pdgId()) != 13) continue;
+	if (gens_iter->charge()*muonv[i]->charge() < 0) continue;
+	double dR = deltaR(gens_iter->eta(), gens_iter->phi(), muonv[i]->eta(), muonv[i]->phi());
+	if (dR > 0.1 || dR > minDR || muonv[i]->pt()/gens_iter->pt() < 0.5 || muonv[i]->pt()/gens_iter->pt() > 2.0) continue;
+	minDR = dR;
+	genpt = gens_iter->pt();
+      }
+    }
+        
+    int nTkLayers = 0;
+    if (muonv[i]->track().isNonnull()) nTkLayers = muonv[i]->track()->hitPattern().trackerLayersWithMeasurement();
+    
+    double sf    =  1.0;
+    double sfErr =  1.0;
+    if (RochesterCorr) {
+      if (!isMC)                     sf = rc.kScaleDT (muonv[i]->charge(), muonv[i]->pt(), muonv[i]->eta(), muonv[i]->phi(), 0, 0);
+      else if (isMC && genpt >  0.0) sf = rc.kSpreadMC(muonv[i]->charge(), muonv[i]->pt(), muonv[i]->eta(), muonv[i]->phi(), genpt, 0, 0);
+      else if (isMC && genpt <= 0.0) sf = rc.kSmearMC (muonv[i]->charge(), muonv[i]->pt(), muonv[i]->eta(), muonv[i]->phi(), nTkLayers, engine.flat(), 0, 0);
+      
+      if (!isMC)                     sfErr = rc.kScaleDTerror (muonv[i]->charge(), muonv[i]->pt(), muonv[i]->eta(), muonv[i]->phi());
+      else if (isMC && genpt >  0.0) sfErr = rc.kSpreadMCerror(muonv[i]->charge(), muonv[i]->pt(), muonv[i]->eta(), muonv[i]->phi(), genpt);
+      else if (isMC && genpt <= 0.0) sfErr = rc.kSmearMCerror (muonv[i]->charge(), muonv[i]->pt(), muonv[i]->eta(), muonv[i]->phi(), nTkLayers, engine.flat());
+    }
+
+    SF   .push_back(sf);
+    SFErr.push_back(sfErr);
+    
+    //std::cout<<"genpt "<<genpt<<"\n";
+    //std::cout<<"sf "<<sf<<" and sfErr "<<sfErr<<"\n";
+
+  }
+  
+  for (size_t i = 0; i < muonv.size(); i++) {
+    for (size_t j = i+1; j < muonv.size(); j++) {
+      CompositeCandidate mm("mm");
+      mm.addDaughter(ShallowCloneCandidate(CandidateBaseRef(muonv[i])), "muon1");
+      mm.addDaughter(ShallowCloneCandidate(CandidateBaseRef(muonv[j])), "muon2");
+      AddFourMomenta addp4;
+      addp4.set(mm);
+      
+      double masserrval = -1.;    
+      if (muonv[i]->track().isNonnull() && muonv[j]->track().isNonnull()) {       
+	CompositeCandMassResolution merr;
+	merr.init(iSetup);
+	masserrval = merr.getMassResolution(mm);
+      }
+      masserr.push_back(masserrval);
+      
+      m1idx.push_back((unsigned char)i);
+      m2idx.push_back((unsigned char)j);
+    }
+  }
+  ////////////////////////////////////////////////////////////
+
+  // Jets information ////////////////////////////////////////
+  jet4s.clear();
+
+  jbtagcsv.clear();
+  jbtagdcsv.clear();
+  jid.clear();
+
+  vector<pat::JetRef> jetv;
+  for (auto jets_iter = jetsH->begin(); jets_iter != jetsH->end(); ++jets_iter) {
+    pat::JetRef jref(jetsH, jets_iter - jetsH->begin());
+    if (jref->pt() < 20.0) continue;
+    if (fabs(jref->eta()) > 5.0) continue;
+    jetv.push_back(jref);
+  }
+  if (jetv.size() > 0) sort(jetv.begin(), jetv.end(), jetSorter);
+  
+  for (size_t i = 0; i < jetv.size(); i++) {
+    TLorentzVector jet4;
+    jet4.SetPtEtaPhiM(jetv[i]->pt(), jetv[i]->eta(), jetv[i]->phi(), jetv[i]->mass());
+    jet4s.push_back(jet4);
+    
+    bool overlap = false;
+    for (std::size_t j = 0; j < muon4s.size(); j++) {
+      if (jet4.DeltaR(muon4s[j]) < 0.4) overlap = true;
+    }
+    if (overlap) continue;
+    
+    double btvcsv    = -10.0;
+    double btvdcsvb  = -10.0;
+    double btvdcsvbb = -10.0;
+    
+    if (fabs(jetv[i]->eta()) < 2.4) {
+      btvcsv       = jetv[i]->bDiscriminator("pfCombinedInclusiveSecondaryVertexV2BJetTags");
+      btvdcsvb     = jetv[i]->bDiscriminator("pfDeepCSVJetTags:probb");
+      btvdcsvbb    = jetv[i]->bDiscriminator("pfDeepCSVJetTags:probbb");
+    }
+    jbtagcsv .push_back(btvcsv);
+    jbtagdcsv.push_back(btvdcsvb+btvdcsvbb);
+    jid      .push_back(getJetID(jetv[i]));
+  }
+  ////////////////////////////////////////////////////////////
+  
+  // gen info ////////////////////////////////////////////////
+  gens.clear(); 
+  
+  if (isMC && gensH.isValid()) {
+    
+    for (auto gens_iter = gensH->begin(); gens_iter != gensH->end(); ++gens_iter) { 
+      if(gens_iter->status() != 1) continue;
+      
+      if (abs(gens_iter->pdgId()) == 13 && gens_iter->fromHardProcessFinalState()) {
+	TLorentzVector g4;
+	g4.SetPtEtaPhiM(gens_iter->pt(), gens_iter->eta(), gens_iter->phi(), gens_iter->mass());
+	gens.push_back(g4);
+      }
+    }
+  }
+  ////////////////////////////////////////////////////////////
+  
+  // fill tree ///////////////////////////////////////////////
+  tree->Fill();		
+  ////////////////////////////////////////////////////////////
+}
+
+
+// ------------ method called once each job just before starting event loop  ------------
+void 
+TreeMaker::beginJob()
+{
+  // Access the TFileService
+  edm::Service<TFileService> fs;
+  
+  // Create the TTree
+  tree = fs->make<TTree>("tree", "tree");
+  
+  //Event Info
+  tree->Branch("lumSec"		, &lumSec			 , "lumSec/i" );
+  tree->Branch("run"		, &run				 , "run/i"    );
+  tree->Branch("eventNo"	, &eventNo			 , "eventNo/i");
+  
+  tree->Branch("wgt"            , &wgt                           , "wgt/D"    );
+
+  tree->Branch("qcdscale"       , "std::vector<double>"          , &qcdscale  );
+  tree->Branch("pdfunc"         , "std::vector<double>"          , &pdfunc    );
+
+  //Pileup info
+  if (isMC) tree->Branch("putrue"  , &putrue                     , "putrue/i" );
+
+  //Triggers
+  tree->Branch("hltsinglemu"          , &hltsinglemu                   , "hltsinglemu/b");
+  tree->Branch("hltdoublemu"          , &hltdoublemu                   , "hltdoublemu/b");
+
+  //muons
+  tree->Branch("muon4s"               , "std::vector<TLorentzVector>"  , &muon4s    , 32000, 0);
+  tree->Branch("mid"                  , "std::vector<char>"            , &mid                );
+  tree->Branch("mdB"                  , "std::vector<double>"          , &mdB                );  
+  tree->Branch("mdz"                  , "std::vector<double>"          , &mdz                );  
+
+  tree->Branch("miso"                 , "std::vector<double>"          , &miso        );  
+  tree->Branch("miso_ch"              , "std::vector<double>"          , &miso_ch     );
+  tree->Branch("miso_neu"             , "std::vector<double>"          , &miso_neu    );
+  tree->Branch("miso_ph"              , "std::vector<double>"          , &miso_ph     );
+  
+  tree->Branch("m1idx"                , "std::vector<unsigned char>"   , &m1idx    );
+  tree->Branch("m2idx"                , "std::vector<unsigned char>"   , &m2idx    );
+  tree->Branch("masserr"              , "std::vector<double>"          , &masserr  );
+
+  tree->Branch("SF"                   , "std::vector<float>"           , &SF        , 32000, 0);
+  tree->Branch("SFErr"                , "std::vector<float>"           , &SFErr     , 32000, 0);
+  
+  // Jet info
+  tree->Branch("jet4s"                , "std::vector<TLorentzVector>"  , &jet4s        , 32000, 0);
+  tree->Branch("jbtagcsv"             , "std::vector<double>"          , &jbtagcsv );
+  tree->Branch("jbtagdcsv"            , "std::vector<double>"          , &jbtagdcsv);
+  tree->Branch("jid"                  , "std::vector<char>"            , &jid      );
+  
+  // Gen info
+  if (isMC) tree->Branch("gens"       , "std::vector<TLorentzVector>"  , &gens      , 32000, 0);
+}
+
+// ------------ method called once each job just after ending the event loop  ------------
+void 
+TreeMaker::endJob() 
+{
+}
+
+void TreeMaker::beginRun(edm::Run const& iRun, edm::EventSetup const& iSetup) {
+  //HLT
+  triggerPathsVector.push_back("HLT_IsoMu24_v");
+  triggerPathsVector.push_back("HLT_IsoTkMu24_v");
+  triggerPathsVector.push_back("HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_v");
+  triggerPathsVector.push_back("HLT_Mu17_TrkIsoVVL_TkMu8_TrkIsoVVL_v");
+  triggerPathsVector.push_back("HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_DZ_v");
+  triggerPathsVector.push_back("HLT_Mu17_TrkIsoVVL_TkMu8_TrkIsoVVL_DZ_v");
+
+  HLTConfigProvider hltConfig;
+  bool changedConfig = false;
+  hltConfig.init(iRun, iSetup, triggerResultsTag.process(), changedConfig);
+  
+  for (size_t i = 0; i < triggerPathsVector.size(); i++) triggerPathsMap[triggerPathsVector[i]] = -1;
+  
+  for (size_t i = 0; i < triggerPathsVector.size(); i++) {
+    
+    TPRegexp pattern(triggerPathsVector[i]);
+
+    for (size_t j = 0; j < hltConfig.triggerNames().size(); j++) {
+
+      std::string pathName = hltConfig.triggerNames()[j];
+
+      if(TString(pathName).Contains(pattern)){
+	triggerPathsMap[triggerPathsVector[i]] = j;
+      }
+    }
+  }
+
+}
+
+void TreeMaker::endRun(edm::Run const& iRun, edm::EventSetup const&) {
+  using namespace edm;
+  using namespace std;
+
+  Handle<LHERunInfoProduct> run;
+  iRun.getByToken(lheRunInfoToken, run);
+
+  for (auto iter = run->headers_begin(); iter != run->headers_end(); iter++) {
+    vector<string> lines = iter->lines();
+
+    for (unsigned int iLine = 0; iLine<lines.size(); iLine++) {
+      cout << lines.at(iLine) << endl;
+    }
+  }
+}
+
+void TreeMaker::beginLuminosityBlock(edm::LuminosityBlock const& iLumi, edm::EventSetup const&) {
+}
+
+void TreeMaker::endLuminosityBlock(edm::LuminosityBlock const&, edm::EventSetup const&) {
+}
+
+char TreeMaker::getJetID(const pat::JetRef& jet) {
+
+    char jetid  = 0;
+
+    double eta  = jet->eta();
+    double nhf  = jet->neutralHadronEnergyFraction();
+    double nemf = jet->neutralEmEnergyFraction();
+    double chf  = jet->chargedHadronEnergyFraction();
+    double cemf = jet->muonEnergyFraction();
+    int    np   = jet->chargedMultiplicity() + jet->neutralMultiplicity();
+    int    nnp  = jet->neutralMultiplicity();
+    int    chm  = jet->chargedMultiplicity();
+
+    if ((nhf < 0.99 && nemf < 0.99 && np > 1) && ((fabs(eta) <= 2.4 && chf > 0 && chm > 0 && cemf < 0.99) || fabs(eta) > 2.4) && fabs(eta) <= 2.7) jetid += 1;
+    if ((nhf < 0.90 && nemf < 0.90 && np > 1) && ((fabs(eta) <= 2.4 && chf > 0 && chm > 0 && cemf < 0.99) || fabs(eta) > 2.4) && fabs(eta) <= 2.7) jetid += 2;
+
+    if (nhf < 0.98 && nemf > 0.01 && nnp > 2  && fabs(eta) > 2.7 && fabs(eta) <= 3.0) {jetid += 1; jetid += 2;}
+    if (              nemf < 0.90 && nnp > 10 && fabs(eta) > 3.0                    ) {jetid += 1; jetid += 2;}
+
+    return jetid;
+}
+
+bool TreeMaker::isMediumMuon(const pat::MuonRef& muon) {
+      bool goodGlob = muon->isGlobalMuon() && 
+                      muon->globalTrack()->normalizedChi2() < 3 && 
+                      muon->combinedQuality().chi2LocalPosition < 12 && 
+                      muon->combinedQuality().trkKink < 20; 
+      bool isMedium = muon::isLooseMuon(*muon) && 
+                      muon->innerTrack()->validFraction() > 0.49 && 
+                      muon::segmentCompatibility(*muon) > (goodGlob ? 0.303 : 0.451); 
+      return isMedium; 
+}
+
+// ------------ method fills 'descriptions' with the allowed parameters for the module  ------------
+void
+TreeMaker::fillDescriptions(edm::ConfigurationDescriptions& descriptions) {
+  //The following says we do not know what parameters are allowed so do no validation
+  // Please change this to state exactly what you do use, even if it is no parameters
+  edm::ParameterSetDescription desc;
+  desc.setUnknown();
+  descriptions.addDefault(desc);
+}
+
+//define this as a plug-in
+DEFINE_FWK_MODULE(TreeMaker);

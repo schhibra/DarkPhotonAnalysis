@@ -1,0 +1,43 @@
+samples = {}
+
+def AddDYSamples(samples):
+
+    samples['DYJetsToLL_M-50_ext2']  = [#there is no ext1 or ext0
+        '/DYJetsToLL_M-50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/RunIISummer16MiniAODv3-PUMoriond17_94X_mcRun2_asymptotic_v3_ext2-v1/MINIAODSIM',
+        ['isMC=True','useLHEWeights=True','applyHLTFilter=True','applyDimuonFilter=True','GlobalTag=94X_mcRun2_asymptotic_v3'],
+        'FileBased',
+        '',
+        1
+    ]
+
+    samples['DYJetsToLL_M-50_ext2_LO']  = [#there is also ext1. Did not processed
+        '/DYJetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/RunIISummer16MiniAODv3-PUMoriond17_94X_mcRun2_asymptotic_v3_ext2-v2/MINIAODSIM',
+        ['isMC=True','useLHEWeights=True','applyHLTFilter=True','applyDimuonFilter=True','GlobalTag=94X_mcRun2_asymptotic_v3'],
+        'FileBased',
+        '',
+        1
+    ]
+
+    samples['DYJetsToLL_M-10to50']  = [
+        '/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/RunIISummer16MiniAODv3-PUMoriond17_94X_mcRun2_asymptotic_v3-v2/MINIAODSIM',
+        ['isMC=True','useLHEWeights=True','applyHLTFilter=True','applyDimuonFilter=True','GlobalTag=94X_mcRun2_asymptotic_v3'],
+        'EventAwareLumiBased',
+        '',
+        50000
+    ]
+
+    samples['DYJetsToLL_M-10to50_ext1']  = [
+        '/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/RunIISummer16MiniAODv3-PUMoriond17_94X_mcRun2_asymptotic_v3_ext1-v2/MINIAODSIM',
+        ['isMC=True','useLHEWeights=True','applyHLTFilter=True','applyDimuonFilter=True','GlobalTag=94X_mcRun2_asymptotic_v3'],
+        'FileBased',
+        '',
+        1
+    ]
+
+    samples['DYJetsToLL_M-10to50_LO']  = [
+        '/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/RunIISummer16MiniAODv3-PUMoriond17_94X_mcRun2_asymptotic_v3-v2/MINIAODSIM',
+        ['isMC=True','useLHEWeights=True','applyHLTFilter=True','applyDimuonFilter=True','GlobalTag=94X_mcRun2_asymptotic_v3'],
+        'EventAwareLumiBased',
+        '',
+        50000
+    ]
